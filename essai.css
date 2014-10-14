@@ -1,0 +1,59 @@
+body > * {
+    border-radius: 10px;
+    text-align:center;
+    padding:10px 0 10px 0;
+    margin:10px 0 10px 0;
+}
+
+
+
+header {
+    background-color:blue;
+
+    margin:10px 0 10px 0;
+}
+
+
+ul {
+    list-style-position: inside;
+}
+nav  {
+    background-color:orange;
+	
+
+    margin:10px 5% 10px 0;
+    float:left;
+    width: 17.5%;
+    position: fixed;
+    
+}
+
+article {
+    background-color:grey;
+    margin:10px 0 10px 0;
+    width: 77.5%;
+    float:right;
+}	
+
+section {
+    background-color:yellow;
+    text-align:center;
+    border-radius: 10px;
+    padding:inherit;
+    margin: 10px;
+    
+}
+
+
+.clearer {
+    clear:both;
+}
+
+
+footer {
+    background-color:purple;
+
+    margin:10px 0 10px 0;
+}
+	
+
