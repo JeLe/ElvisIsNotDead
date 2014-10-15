@@ -1,47 +1,35 @@
 body > * {
-    border-radius: 10px;
     text-align:center;
-    padding:10px 0 10px 0;
-    margin:10px 0 10px 0;
 }
-
 
 
 header {
     background-color:blue;
-
-    margin:10px 0 10px 0;
 }
 
 
-ul {
-    list-style-position: inside;
-}
-nav  {
-    background-color:orange;
-	
-
-    margin:10px 5% 10px 0;
-    float:left;
-    width: 17.5%;
-    position: fixed;
-    
-}
-
-article {
-    background-color:grey;
-    margin:10px 0 10px 0;
-    width: 77.5%;
+nav a, footer a  {
+    width:25%;
     float:right;
-}	
+    background-color:orange;
+}
 
-section {
-    background-color:yellow;
-    text-align:center;
-    border-radius: 10px;
-    padding:inherit;
-    margin: 10px;
-    
+nav div {
+    width:65%;
+    float:right;
+}
+
+
+#home  {
+    float:left;
+}
+
+img{
+    width: 100%;
+}
+
+footer {
+    background-color:purple;
 }
 
 
@@ -50,10 +38,5 @@ section {
 }
 
 
-footer {
-    background-color:purple;
-
-    margin:10px 0 10px 0;
-}
 	
 
