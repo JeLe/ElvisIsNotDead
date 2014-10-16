@@ -2,9 +2,10 @@ body > * {
     text-align:center;
 }
 
-
+/*Les elements de style propre au haut de page*/
 header {
     background-color:blue;
+       height: 10%;
 }
 
 
@@ -20,13 +21,12 @@ nav div {
 }
 
 
-#home  {
+a[title=home]  {
     float:left;
 }
 
-img{
-    width: 100%;
-}
+/*les elements de style propre aux images deroulantes*/
+
 
 footer {
     background-color:purple;

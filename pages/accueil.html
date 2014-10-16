@@ -2,7 +2,8 @@
 <html lang="fr">
    <head>
       <meta charset="utf-8"/>
-      <link rel="stylesheet" href="essai.css"/>   <!-- feuille de style à déclarer -->
+      <link rel="stylesheet" href="../style/commun.css"/>   <!-- feuille de style à déclarer -->
+      <!--attention, j'ai ecrit culutre..-->
       <title>Normandie et Culutre</title>
    </head>
 
@@ -12,7 +13,7 @@
       <! il faut utiliser le machin:hover + truc, truc suivant machin, pour décacher un truc...>
       <nav>  <!-- menu de navigation avec titre et liste -->
 
-          <a href="" title="home" id="home"><!--<img src="" alt="retour accueil">-->HOME</a>
+          <a href="" title="home"><!--<img src="" alt="retour accueil">-->HOME</a>
 
             <div>
           <a href="" title="musique">musique</a>
@@ -27,9 +28,14 @@
     </header>
       <!------------------------------>
       <!--Chaque article correspond à un truc caché que quand on clique sur l'image on y va... :) -->
-      <article >
-          <img src="images/image.jpg" alt="des moutons">
-          
+      <article id="slider">
+          <div id="mask">
+              <ul>
+          <li id="first"><img src="../images/image.jpg" alt="des moutons"></li>
+              <li id="second"><img src="../images/chevaux.jpg" alt="chevaux"></li>
+                  <li id="third"><img src="../images/vaches.jpg" alt="vaches"></li>
+                      </ul>
+          </div>
       </article>
       
         <article >  CONTENU PRINCIPAL
