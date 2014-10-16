@@ -1,11 +1,12 @@
 body > * {
-    text-align:center;
+    /*text-align:center;*/
 }
 
 /*Les elements de style propre au haut de page*/
 header {
     background-color:blue;
        height: 10%;
+text-align:center;
 }
 
 
