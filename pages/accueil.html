@@ -1,87 +1,102 @@
 <!DOCTYPE html>
 <html lang="fr">
-   <head>
-      <meta charset="utf-8"/>
-      <link rel="stylesheet" href="../style/commun.css"/>   <!-- feuille de style à déclarer -->
-            <link rel="stylesheet" href="../style/accueil.css"/>   <!-- feuille de style à déclarer -->
-      <!--attention, j'ai ecrit culutre..-->
-      <title>Normandie et Culutre</title>
-   </head>
-
-   <body> 
-      <header>   <!-- haut de page -->
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="../style/commun.css"/>   <!-- feuille de style à déclarer -->
+    <link rel="stylesheet" href="../style/accueil.css"/>   <!-- feuille de style à déclarer -->
+    <!--attention, j'ai ecrit culutre..-->
+    <title>Normandie et Culutre</title>
+  </head>
+  
+  <body> 
+    <header>   <!-- haut de page -->
       
       <! il faut utiliser le machin:hover + truc, truc suivant machin, pour décacher un truc...>
       <nav>  <!-- menu de navigation avec titre et liste -->
-
-          <a href="" title="home"><!--<img src="" alt="retour accueil">-->HOME</a>
-
-            <div>
-          <a href="" title="musique">musique</a>
-          <a href="" title="cinema">cinema</a>
-          <a href="" title="tradition">tradition</a>
-</div>
-            <div class="clearer"></div>
+	
+        <a href="#" title="home"><img src="../images/home.jpg" alt="retour accueil">HOME</a>
+	
+        <div>
+          <ul>
+            <li><a href="#" title="musique">musique</a>
+              <ul>
+                <li>Beauregard</li>
+                <li>Jazz sous les Pommiers</li>
+            </ul></li>
+            <li><a href="#" title="cinema">cinema</a>
+              <ul>
+                <li>Festival de Deauville</li>
+            </ul></li>
+            <li><a href="#" title="tradition">tradition</a>
+              <ul>
+                <li>Festival Médiéval</li>
+                <li>Cidre et Dragons</li>
+            </ul></li>
+          </ul>
+        </div>
+        <div class="clearer"></div>
       </nav>
-         <div class="clearer"></div>
+      <div class="clearer"></div>
       
       
     </header>
-      <!------------------------------>
-      <!--Chaque article correspond à un truc caché que quand on clique sur l'image on y va... :) -->
-      <article id="slider">
-          <div id="mask">
-              <ul>
-          <li id="first"><img src="../images/image.jpg" alt="des moutons"></li>
-              <li id="second"><img src="../images/chevaux.jpg" alt="chevaux"></li>
-                  <li id="third"><img src="../images/vaches.jpg" alt="vaches"></li>
-                      </ul>
-          </div>
-      </article>
-      
-        <article >  CONTENU PRINCIPAL
-      	     <section> partie1</section>
-	     <section> partie2</section>
-	     <section> partie3</section>
-	     <section> partie4</section>
-      </article>
-
-  <article >  CONTENU PRINCIPAL
-      	     <section> partie1</section>
-	     <section> partie2</section>
-	     <section> partie3</section>
-	     <section> partie4</section>
-      </article>
-  <article >  CONTENU PRINCIPAL
-      	     <section> partie1</section>
-	     <section> partie2</section>
-	     <section> partie3</section>
-	     <section> partie4</section>
-      </article>
-
-  <article >  CONTENU PRINCIPAL
-      	     <section> partie1</section>
-	     <section> partie2</section>
-	     <section> partie3</section>
-	     <section> partie4</section>
-      </article>
-
-  <article >  CONTENU PRINCIPAL
-      	     <section> partie1</section>
-	     <section> partie2</section>
-	     <section> partie3</section>
-	     <section> partie4</section>
-      </article>
-
-
+    <!------------------------------>
+    <!--Chaque article correspond à un truc caché que quand on clique sur l'image on y va... :) -->
+    <article id="slider">
+      <div id="mask">
+        <ul>
+          <li id="first"><img src="../images/image.jpg" alt="des moutons">
+            <div class="tooltip"> <h1>Sunbathing</h1> </div></li>
+          <li id="second"><img src="../images/chevaux.jpg" alt="chevaux"></li>
+          <li id="third"><img src="../images/vaches.jpg" alt="vaches"> <div class="tooltip"> <h1>Sunbathing</h1> </div>
+          </li>
+        </ul>
+      </div>
+    </article>
+    
+    <article >  CONTENU PRINCIPAL
+      <section> partie1</section>
+      <section> partie2</section>
+      <section> partie3</section>
+      <section> partie4</section>
+    </article>
+    
+    <article >  CONTENU PRINCIPAL
+      <section> partie1</section>
+      <section> partie2</section>
+      <section> partie3</section>
+      <section> partie4</section>
+    </article>
+    <article >  CONTENU PRINCIPAL
+      <section> partie1</section>
+      <section> partie2</section>
+      <section> partie3</section>
+      <section> partie4</section>
+    </article>
+    
+    <article >  CONTENU PRINCIPAL
+      <section> partie1</section>
+      <section> partie2</section>
+      <section> partie3</section>
+      <section> partie4</section>
+    </article>
+    
+    <article >  CONTENU PRINCIPAL
+      <section> partie1</section>
+      <section> partie2</section>
+      <section> partie3</section>
+      <section> partie4</section>
+    </article>
+    
+    
+    <div class="clearer"></div>
+    <footer>  <!-- pied de page-->
+      <a href="#">contacts</a>
+      <a href="#">jobs</a>
+      <a href="#">en savoir plus</a>
+      <a href="#">mentions legales</a>
       <div class="clearer"></div>
-      <footer>  <!-- pied de page-->
-       <a href="">contacts</a>
-       <a href="">jobs</a>
-       <a href="">en savoir plus</a>
-       <a href="">mentions legales</a>
-                   <div class="clearer"></div>
-      </footer>
-     
-   </body>
+    </footer>
+    
+  </body>
 </html> 

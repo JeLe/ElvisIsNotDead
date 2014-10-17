@@ -4,13 +4,23 @@ body > * {
 
 /*Les elements de style propre au haut de page*/
 header {
-    background-color:blue;
-       height: 10%;
-text-align:center;
+    background-color: #33cc33;
+    height: 10%;
+    text-align:center;
+}
+
+/*menu du haut*/
+
+nav li > ul {
+    display:none;
+}
+
+li:hover > ul {
+    display: inline; /*now i need to fix the disply properties..*/
 }
 
 
-nav a, footer a  {
+nav li, footer a  {
     width:25%;
     float:right;
     background-color:orange;
@@ -26,7 +36,11 @@ a[title=home]  {
     float:left;
 }
 
-/*les elements de style propre aux images deroulantes*/
+a[title=home] img {
+    width: 20px;
+}
+
+
 
 
 footer {
@@ -36,6 +50,8 @@ footer {
 
 .clearer {
     clear:both;
+    margin:0;
+    padding:0;
 }
 
 
