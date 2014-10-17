@@ -1,4 +1,42 @@
+section {
+    width:40%;
+    margin: 2.5%;
+}
 
+section p{
+    text-align: justify;
+    padding-left: 5%;
+}
+
+
+.video{
+float: left;
+padding-left: 2.5%;
+}
+
+.text{
+float: right;
+padding-right: 2.5%;
+}
+
+iframe {
+width:90%;
+
+}
+
+.button{
+width: 50%;
+height: 5ex;
+float: right;
+padding-left: 2em;
+
+vertical-align: middle;
+background-color: #E6E6E6;
+color: black;
+text-decoration: none;
+border-radius: 2px;
+
+}
 
 /*tout en rapport avec le slider*/
 
