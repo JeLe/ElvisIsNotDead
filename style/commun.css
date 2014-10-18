@@ -1,24 +1,44 @@
-body > * {
-    /*text-align:center;*/
-}
+
 
 /*Les elements de style propre au haut de page*/
 header {
     background-color: #33cc33;
     height: 10%;
-    text-align:center;
+
 }
 
 /*menu du haut*/
+
+ul li {
+positon: relative;
+}
 
 nav li > ul {
     display:none;
 }
 
 li:hover > ul {
-    display: inline; /*now i need to fix the disply properties..*/
+    position: absolute;
+    display: block; /*now i need to fix the disply properties..*/
+    z-index: 2; /*permet de le faire passe audessu des images...*/
+     background-color: #ff0011;
+         padding-left: 0;
+    width : inherit;
+}
+ul li ul li {
+    display : block;
+    width: 100%;
 }
 
+li ul li {
+
+position: relative;
+left : -10%;
+    background-color: #ff0011;
+padding:none;
+width : 20%;
+
+}
 
 nav li, footer a  {
     width:25%;
@@ -41,6 +61,28 @@ a[title=home] img {
 }
 
 
+
+/*les bouttons*/
+.button{
+width: 50%;
+float: right;
+  background: #00b7ea;
+
+
+border-radius: 2px;
+}
+
+.button a {
+  text-align: center;/* replaces: padding-left: 2em;*/
+  display: block;
+  height: 50px;
+  color: white;
+  font: 17px/50px Helvetica, Verdana, sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+
+
+}
 
 
 footer {
