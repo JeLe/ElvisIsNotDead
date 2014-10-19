@@ -7,59 +7,72 @@ header {
 
 }
 
-/*menu du haut*/
 
-ul li {
-positon: relative;
-}
-
-nav li > ul {
-    display:none;
-}
-
-li:hover > ul {
-    position: absolute;
-    display: block; /*now i need to fix the disply properties..*/
-    z-index: 2; /*permet de le faire passe audessu des images...*/
-     background-color: #ff0011;
-         padding-left: 0;
-    width : inherit;
-}
-ul li ul li {
-    display : block;
-    width: 100%;
-}
-
-li ul li {
-
-position: relative;
-left : -10%;
-    background-color: #ff0011;
-padding:none;
-width : 20%;
-
-}
-
-nav li, footer a  {
-    width:25%;
-    float:right;
-    background-color:orange;
-}
-
-nav div {
-    width:65%;
-    float:right;
-}
 
 
 a[title=home]  {
     float:left;
+    width : 10%;
 }
 
 a[title=home] img {
     width: 20px;
 }
 
+/*menu du haut*/
+
+.fancy_dropdown_menu {
+    float : right;
+   width:80%;
+
+}
+
+.fancy_dropdown_menu a { 
+   padding:20px;
+   display:block;
+   text-decoration: none;
+   text-align: center;
+   color:white; /* applying hardly any visual styling to the anchors makes sure that the hover states work in all cases */
+}
+
+.fancy_dropdown_menu ul {
+   list-style-type:none; /* removes the bullets */
+   overflow:visible; /* makes sure the dropdown can be seen */
+}
+
+.fancy_dropdown_menu > ul > li {
+   float:left;
+   width:33%;
+   background:gray;
+   border-right:1px solid white;
+   position:relative;
+   overflow:visible;
+}
+
+.fancy_dropdown_menu > ul > li > ul {
+   max-height: 0; /* hides the drop-down menu */
+   overflow: hidden; /* I use this method instead of display:none for accessibility, and you can also do some fun :hover stuff with CSS3 animations. */
+   position:absolute;
+   width:100%;
+}
+
+.fancy_dropdown_menu > ul > li:hover {
+   background: black;
+}
+
+
+.fancy_dropdown_menu > ul > li:hover ul {
+   max-height:1000px; /* shows the drop-down when you hover over its parent. Unless this is a massively long menu, 1000px should cover it. */
+}
+
+.fancy_dropdown_menu > ul > li > ul > li {
+   background: red;
+}
+
+.fancy_dropdown_menu > ul > li > ul > li:hover {
+   background: orange;
+}
+/*merci google !*/
 
 
 /*les bouttons*/
@@ -82,6 +95,14 @@ border-radius: 2px;
   text-transform: uppercase;
 
 
+}
+
+
+
+footer a  {
+    width:25%;
+    float:right;
+    background-color:orange;
 }
 
 
