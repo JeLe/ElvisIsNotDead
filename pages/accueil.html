@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="../style/commun.css"/>   <!-- feuille de style à déclarer -->
     <link rel="stylesheet" href="../style/accueil.css"/>   <!-- feuille de style à déclarer -->
     <!--attention, j'ai ecrit culutre..-->
+    <!-- ne pas oublier les métadonnées-->
     <title>Normandie et Culutre</title>
   </head>
   
@@ -13,26 +14,28 @@
       
       <! il faut utiliser le machin:hover + truc, truc suivant machin, pour décacher un truc...>
       <nav>  <!-- menu de navigation avec titre et liste -->
-	
+        <div id="left">
         <a href="#" title="home"><img src="../images/home.jpg" alt="retour accueil">HOME</a>
-	
+	</div>
         <div class="fancy_dropdown_menu">
           <ul>
             <li><a href="#" title="musique">musique</a>
               <ul>
-                <li>Beauregard</li>
-                <li>Jazz sous les Pommiers</li>
+                <li><a href="#">Beauregard</a></li>
+                <li><a href="#">Jazz sous les Pommiers</a></li>
             </ul></li>
             <li><a href="#" title="cinema">cinema</a>
               <ul>
-                <li>Festival de Deauville</li>
+                <li><a href="#">Festival de Deauville</a></li>
             </ul></li>
             <li><a href="#" title="tradition">tradition</a>
               <ul>
-                <li>Festival Médiéval</li>
-                <li>Cidre et Dragons</li>
+                <li><a href="#">Festival Médiéval</a></li>
+                <li><a href="#">Cidre et Dragons</a></li>
             </ul></li>
           </ul>
+          <div class="clearer"></div>
+
           </div>
         <div class="clearer"></div>
       </nav>
@@ -43,15 +46,19 @@
     <!------------------------------>
     <!--Chaque article correspond à un truc caché que quand on clique sur l'image on y va... :) -->
     <article id="slider">
-      <div id="mask">
-        <ul>
-          <li id="first"><img src="../images/image.jpg" alt="des moutons">
-            <div class="tooltip"> <h1>Sunbathing</h1> </div></li>
-          <li id="second"><img src="../images/chevaux.jpg" alt="chevaux"></li>
-          <li id="third"><img src="../images/vaches.jpg" alt="vaches"> <div class="tooltip"> <h1>Sunbathing</h1> </div>
-          </li>
-        </ul>
-      </div>
+
+
+    <img src="../images/image.jpg" alt="des moutons" id="first">
+            <div class="tooltip"> <h1>a cow</h1> </div></li>
+
+    <img src="../images/chevaux.jpg" alt="chevaux" id="second">
+                <div class="tooltip"> <h1>horses</h1> </div>
+
+    <img src="../images/vaches.jpg" alt="vaches" id="third">
+        <div class="tooltip"> <h1>and sheep ;)</h1> </div>
+
+
+
     </article>
  
 <article >  
@@ -73,13 +80,18 @@
 	<div class="clearer"></div>
       </section>
     </article>
+
+
+
+
+
     
     <article>
       
-      <section class="video2"><iframe width="640" height="480" src="http://www.youtube.com/embed/34HluqAbGYA" allowfullscreen></iframe>
+      <section class="video"><iframe width="640" height="480" src="http://www.youtube.com/embed/34HluqAbGYA" allowfullscreen></iframe>
       </section>
       
-      <section class="text2"> 
+      <section class="text">
 	<h2>La Normandie fait son cinéma</h2>
 	<p> Le cinéma n'a eu sa place que tardivement au sein de la Normandie, contrairement aux régions PACA ou Ile-de-France par exemple. Il a donc été facile de choisir un événément traitant du cinéma se passant en Normandie. </p>
 	<h3>Festival du Cinéma Américain de Deauville</h3>
@@ -90,6 +102,12 @@
       </section>
       
     </article>
+    
+    
+    
+    
+    
+    
     
     <article>
       

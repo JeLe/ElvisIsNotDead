@@ -1,18 +1,50 @@
+/*mise en place des polices de la page.*/
+
+@font-face{
+font-family:Flex;
+src: url(../fonts/FlexDisplay.otf);
+}
+
+@font-face{
+font-family: Quicksand;
+src: url(../fonts/quicksand/Quicksand-Light.otf);
+}
+
+@font-face{
+font-family: Junction;
+src: url(../fonts/junction-master/Junction-light.otf);
+}
 
 
-/*Les elements de style propre au haut de page*/
-header {
-    background-color: #33cc33;
-    height: 10%;
+article {
+font-family: Junction, sans-serif;
+}
 
+
+
+p {
+font-family: Quicksand, sans-serif;
 }
 
 
 
 
-a[title=home]  {
+/*Les elements de style propre au haut de page*/
+header, footer {
+    background-color: #33cc33;
+    font-family: Flex, sans serif;
+}
+
+
+
+
+#left {
     float:left;
     width : 10%;
+}
+.fancy_dropdown_menu {
+    float : right;
+    width:80%;
 }
 
 a[title=home] img {
@@ -20,13 +52,7 @@ a[title=home] img {
 }
 
 /*menu du haut*/
-
-.fancy_dropdown_menu {
-    float : right;
-   width:80%;
-
-}
-
+/*formats généraux*/
 .fancy_dropdown_menu a { 
    padding:20px;
    display:block;
@@ -36,10 +62,14 @@ a[title=home] img {
 }
 
 .fancy_dropdown_menu ul {
-   list-style-type:none; /* removes the bullets */
+   list-style:none; /* removes the bullets */
    overflow:visible; /* makes sure the dropdown can be seen */
+   padding-left: 0;
+   z-index: 1;
 }
 
+
+/*premier niveau*/
 .fancy_dropdown_menu > ul > li {
    float:left;
    width:33%;
@@ -49,54 +79,58 @@ a[title=home] img {
    overflow:visible;
 }
 
+/*deuxieme niveau*/
 .fancy_dropdown_menu > ul > li > ul {
    max-height: 0; /* hides the drop-down menu */
-   overflow: hidden; /* I use this method instead of display:none for accessibility, and you can also do some fun :hover stuff with CSS3 animations. */
-   position:absolute;
-   width:100%;
+display: none;
+   /*overflow: hidden; */
+    position:absolute;
+   width:100%; /*comme ca les sous menus font la meme taille que le parent ;)*/
 }
 
+/*et comme on sait sur quel truc on va cliquer.*/
 .fancy_dropdown_menu > ul > li:hover {
    background: black;
 }
 
 
-.fancy_dropdown_menu > ul > li:hover ul {
-   max-height:1000px; /* shows the drop-down when you hover over its parent. Unless this is a massively long menu, 1000px should cover it. */
-}
-
-.fancy_dropdown_menu > ul > li > ul > li {
-   background: red;
-}
+/*dans les sous menus aussi !*/
 
 .fancy_dropdown_menu > ul > li > ul > li:hover {
    background: orange;
 }
-/*merci google !*/
+
+/*rendre visible le sous menu*/
+.fancy_dropdown_menu > ul > li:hover ul {
+display :block;
+}
+
+/* et quelques couleurs en plus pour finir */
+.fancy_dropdown_menu > ul > li > ul > li {
+   background: red;
+}
+
+
+
 
 
 /*les bouttons*/
 .button{
-width: 50%;
-float: right;
-  background: #00b7ea;
-
-
-border-radius: 2px;
+    width: 50%;
+    float: right;
+    background: #00b7ea;
+    border-radius: 2px;
 }
 
 .button a {
   text-align: center;/* replaces: padding-left: 2em;*/
   display: block;
-  height: 50px;
+  height: 45px;
   color: white;
-  font: 17px/50px Helvetica, Verdana, sans-serif;
+  font: 17px/50px Junction, sans-serif;
   text-decoration: none;
   text-transform: uppercase;
-
-
 }
-
 
 
 footer a  {
@@ -106,9 +140,6 @@ footer a  {
 }
 
 
-footer {
-    background-color:purple;
-}
 
 
 .clearer {
