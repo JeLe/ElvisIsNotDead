@@ -25,6 +25,17 @@ float: right;
 /*padding-right: 2.5%;*/
 }
 
+
+.video2{
+float: right;
+padding-right:2.5%;
+}
+
+.text2{
+float: left;
+padding-left:6%;
+}
+
 iframe {
 width:90%;
 
