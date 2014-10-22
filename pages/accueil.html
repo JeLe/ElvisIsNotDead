@@ -12,10 +12,10 @@
   <body> 
     <header>   <!-- haut de page -->
       
-      <! il faut utiliser le machin:hover + truc, truc suivant machin, pour décacher un truc...>
+      <!-- il faut utiliser le machin:hover + truc, truc suivant machin, pour décacher un truc...-->
       <nav>  <!-- menu de navigation avec titre et liste -->
         <div id="left">
-        <a href="#" title="home"><img src="../images/home.jpg" alt="retour accueil">HOME</a>
+        <a href="#" title="home"><img src="../images/home.jpg" alt="retour accueil">Normandie - Une terre de culutre</a>
 	</div>
         <div class="fancy_dropdown_menu">
           <ul>
@@ -45,9 +45,10 @@
     </header>
     <!------------------------------>
     <!--Chaque article correspond à un truc caché que quand on clique sur l'image on y va... :) -->
-    <article id="slider">
-
-
+    <div id="slider">
+        <!--Cette partie ne eut pas etre un article, parce qu'elle ne fait pas sens a elle touts seule-->
+        <!--Et en plus ca peut pas etre une section, car elle forme en elle meme un tout et n'a absolument pas le meme role ni la meme structure que les autre sections de la page.-->
+        <!--du coup c'est une div...-->
     <img src="../images/vaches.jpg" alt="vaches" id="first">
             <div class="tooltip"> <h1>a cow</h1> </div></li>
 
@@ -59,7 +60,7 @@
 
 
 
-    </article>
+    </div>
  
 <article >  
       
@@ -81,17 +82,18 @@
       </section>
     </article>
 
+<div class="clearer"></div>
 
 
 
 
-    
+
     <article>
       
-      <section class="video"><iframe width="640" height="480" src="http://www.youtube.com/embed/34HluqAbGYA" allowfullscreen></iframe>
+      <section class="video2"><iframe width="640" height="480" src="http://www.youtube.com/embed/34HluqAbGYA" allowfullscreen></iframe>
       </section>
       
-      <section class="text">
+      <section class="text2">
 	<h2>La Normandie fait son cinéma</h2>
 	<p> Le cinéma n'a eu sa place que tardivement au sein de la Normandie, contrairement aux régions PACA ou Ile-de-France par exemple. Il a donc été facile de choisir un événément traitant du cinéma se passant en Normandie. </p>
 	<h3>Festival du Cinéma Américain de Deauville</h3>
@@ -103,9 +105,10 @@
       
     </article>
     
-    
-    
-    
+    <div class="clearer"></div>
+
+
+
     
     
     

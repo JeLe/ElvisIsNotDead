@@ -57,10 +57,7 @@ display: none; /*ok i'm gonna need to reserch this..*/
 
 #slider {
 width:100%;
-
 position : relative;
-list-style: none;
-
 }
 
 
@@ -100,48 +97,48 @@ padding:0;
 
 
 @-webkit-keyframes cycle {
-0%  {visibility: visible; }
+0%  {opacity: 1; }
 
-   6.6% {visibility: visible;}
+   6.6% {opacity: 1;}
 
-   20% {visibility: visible;}
+   20% {opacity: 1;}
 
-   26.5% {visibility: hidden;}
+   26.5% {opacity: 0;}
 
-   28% {visibility: hidden;}
+   28% {opacity: 0;}
 
-   93.7% {visibility: hidden;}
+   93.7% {opacity: 0;}
 
-   100%{visibility: visible;}
+   100%{opacity: 1;}
 
 }
 
 
 @-webkit-keyframes cycletwo {
-    0%  {visibility: hidden; }
+    0%  {opacity: 0; }
 
-   20% {visibility: hidden;}
+   20% {opacity: 0;}
 
-   26.5% {visibility: visible;}
+   26.5% {opacity: 1;}
 
-   53% {visibility: visible;}
+   53% {opacity: 1;}
 
-   59% { visibility: hidden;}
+   59% { opacity: 0;}
 
 }
 
 @-webkit-keyframes cyclethree {
-    0%  {visibility: hidden; }
+    0%  {opacity: 0; }
 
-   20% {visibility: hidden;}
+   20% {opacity: 0;}
 
-   53% {visibility: hidden;}
+   53% {opacity: 0;}
 
-   59% { visibility: visible;}
+   59% { opacity: 1;}
    
-   93.7% { visibility: visible;}
+   93.7% { opacity: 1;}
    
-   100% {visibility: hidden;}
+   100% {opacity: 0;}
 
 
 }
