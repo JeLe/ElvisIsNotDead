@@ -43,9 +43,7 @@ width:90%;
 
 
 /*tout en rapport avec le slider*/
-
 #slider .tooltip {
-display: none; /*ok i'm gonna need to reserch this..*/
    background: rgba(0,0,0,0.7);
    width: 300px;
    height: 60px;
@@ -54,12 +52,13 @@ display: none; /*ok i'm gonna need to reserch this..*/
    left: -320px;
 }
 
-
-#slider {
-width:100%;
-position : relative;
+#slider .tooltip h1 {
+   color: #fff;
+   font-size: 24px;
+   font-weight: 300;
+   line-height: 60px;
+   padding: 0 0 0 10px;
 }
-
 
 
 #slider img {
