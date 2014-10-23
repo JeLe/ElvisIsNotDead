@@ -1,38 +1,39 @@
 /*mise en place des polices de la page.*/
 
 @font-face{
-font-family:Flex;
-src: url(../fonts/FlexDisplay.otf);
+    font-family:Flex;
+    src: url(../fonts/FlexDisplay.otf);
 }
 
 @font-face{
-font-family: Quicksand;
-src: url(../fonts/quicksand/Quicksand-Light.otf);
+    font-family: Quicksand;
+    src: url(../fonts/quicksand/Quicksand-Light.otf);
 }
 
 @font-face{
-font-family: Junction;
-src: url(../fonts/junction-master/Junction-light.otf);
+    font-family: Junction;
+    src: url(../fonts/junction-master/Junction-light.otf);
 }
 
 
 article {
-font-family: Junction, sans-serif;
+    font-family: Junction, sans-serif;
 }
 
 
 
 p {
-font-family: Quicksand, sans-serif;
+    font-family: Quicksand, sans-serif;
 }
 
 
 
 
 /*Les elements de style propre au haut de page*/
-header, footer {
+header{
     background-color: #33cc33;
     font-family: Flex, sans-serif;
+    position: relative;
 }
 
 
@@ -48,62 +49,67 @@ header, footer {
 }
 
 a[title=home] img {
-    width: 20px;
+    position : absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
 }
 
 /*menu du haut*/
 /*formats généraux*/
 nav a {
-   padding:20px;
-   display:block;
-   text-decoration: none;
-   text-align: center;
-   color:white;
+    padding:10px;
+    display:block;
+    text-decoration: none;
+    text-align: center;
+    color:white;
+    font: 15px/45px Junction, sans-serif;
+    
 }
 
 .fancy_dropdown_menu ul {
-   list-style:none; /* removes the bullets */
-   padding: 0;
+    list-style:none; /* removes the bullets */
+    padding: 0;
     margin:0;
-   z-index: 1;
+    z-index: 1;
 }
 
 
 /*premier niveau*/
 .fancy_dropdown_menu > ul > li {
-   float:left;
-   width:33%;
-   border-left:1px solid white;
-   position:relative;
+    float:left;
+    width:33%;
+    border-left:1px solid white;
+    position:relative;
 }
 
 /*deuxieme niveau*/
 .fancy_dropdown_menu > ul > li > ul {
-display: none;
+    display: none;
     position:absolute;
-   width:100%; /*comme ca les sous menus font la meme taille que le parent ;)*/
+    width:100%; /*comme ca les sous menus font la meme taille que le parent ;)*/
 }
 
 /*et comme on sait sur quel truc on va cliquer.*/
 .fancy_dropdown_menu > ul > li:hover {
-   background: #2db34a;
+    background: #2db34a;
 }
 
 
 /*dans les sous menus aussi !*/
 
 .fancy_dropdown_menu > ul > li > ul > li:hover {
-   background: orange;
+    background: #2db34a;
 }
 
 /*rendre visible le sous menu*/
 .fancy_dropdown_menu > ul > li:hover ul {
-display :block;
+    display :block;
 }
 
 /* et quelques couleurs en plus pour finir */
 .fancy_dropdown_menu > ul > li > ul > li {
-   background: red;
+    background: red;
 }
 
 
@@ -119,13 +125,13 @@ display :block;
 }
 
 .button a {
-  text-align: center;/* replaces: padding-left: 2em;*/
-  display: block;
-  height: 45px;
-  color: white;
-  font: 17px/50px Junction, sans-serif;
-  text-decoration: none;
-  text-transform: uppercase;
+    text-align: center;
+    display: block;
+    height: 45px;
+    color: white;
+    font: 17px/50px Junction, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
 
@@ -135,14 +141,15 @@ footer a  {
     text-align: center;
     color: #555;
     text-decoration:none;
+    display: block;
+    height: 45px;
+    font: 17px/50px Junction, sans-serif;
 }
 
 
-< footer {
-     background-color: #ffcc00;
-     font-family: Flex, sans-serif;
-     height: 40px;
-
+footer {
+    background-color: #ffcc00;
+    
 }
 
 .clearer {
@@ -151,6 +158,10 @@ footer a  {
     padding:0;
 }
 
+<<<<<<< HEAD
 
+
+=======
 	
+>>>>>>> FETCH_HEAD
 
