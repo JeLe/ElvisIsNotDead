@@ -30,7 +30,7 @@ font-family: Quicksand, sans-serif;
 
 
 /*Les elements de style propre au haut de page*/
-header {
+header, footer {
     background-color: #33cc33;
     font-family: Flex, sans-serif;
 }
@@ -133,17 +133,17 @@ footer a  {
     width:33%;
     float:right;
     text-align: center;
-    color: white;
+    color: #555;
     text-decoration:none;
 }
 
 
-footer {
-    background-color: #ffcc00;
-    font-family: Flex, sans-serif;
+< footer {
+     background-color: #ffcc00;
+     font-family: Flex, sans-serif;
+     height: 40px;
+
 }
-
-
 
 .clearer {
     clear:both;
