@@ -40,7 +40,7 @@ header, footer {
 
 #left {
     float:left;
-    width : 10%;
+    width : 35%;
 }
 .fancy_dropdown_menu {
     float : right;
@@ -53,7 +53,7 @@ a[title=home] img {
 
 /*menu du haut*/
 /*formats généraux*/
-.fancy_dropdown_menu a { 
+nav a {
    padding:20px;
    display:block;
    text-decoration: none;
