@@ -52,13 +52,13 @@ a[title=home] img {
     position : absolute;
     left: 0;
     top: 0;
-    width: 50px;
+    width: 65px;
 }
 
 /*menu du haut*/
 /*formats généraux*/
 nav a {
-    padding:10px;
+    padding:5px;
     display:block;
     text-decoration: none;
     text-align: center;
@@ -137,6 +137,7 @@ nav a {
 
 footer a  {
     width:33%;
+    padding: 5px 0;
     float:right;
     text-align: center;
     color: #555;
