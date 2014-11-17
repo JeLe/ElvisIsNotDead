@@ -39,17 +39,25 @@ iframe {
     
 }
 
+#slider{
+    position : relative;
+}
 
-
-#slider img{
-    width: 100%;
+#first{
+    position: absolute;
+    top:0;
 }
 
 
-#forward {
-
+#next {
+position : absolute;
+right: 0;
+top :30%;
 }
 
-#back{
+#previous{
+    position: absolute;
 
+left: 0;
+top: 30%;
 }

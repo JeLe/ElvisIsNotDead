@@ -1,13 +1,17 @@
 window.onload = main;
 
 function main(){
+    slider();
     document.getElementById("slider").getElementsByTagName("img")[0].style.height = window.innerHeight-110+"px";
     sliderInterval = setInterval(slider, 4000);
     document.getElementById("link").onclick= goToSlide;
+    //il faut zussi ajiuter un truc qui remet le timer a 0
+    document.getElementById("previous").onclick= function(){if(I>1)I=I-2; slider()};//ca ca bug...
+    document.getElementById("next").onclick= function(){slider()};
 }
 
 
-function init(){}
+function setSizes(){}
 
 
 
@@ -19,11 +23,17 @@ function slider(){
     I++;
     if (I==3){I=0;}
 
+    var img = document.getElementById("slider").getElementsByTagName("img")[0];
     // on place la bonne image dans la division
     document.getElementById("slider").getElementsByTagName("img")[0].src = images[I][1];
+    //et on la met à la bonne hauteur
+    img.style.height = window.innerHeight-130+"px";
+    //et on la centre.
 
-    //et on la met aux bonnes dimensions... ou pas !
-    document.getElementById("slider").getElementsByTagName("img")[0].style.height = window.innerHeight-150+"px";
+    img.style.left = (window.innerWidth-img.clientWidth)/2+"px";
+    //et remets le footer a la bonne place :
+    document.getElementById("slider").style.height = img.clientHeight+4+"px";
+
 }
 
 
@@ -31,5 +41,5 @@ function goToSlide(){
     clearInterval(sliderInterval);
     document.getElementById("slider").style.display = "none";
     document.getElementById(images[I][0]).style.display = "block";
-
 }
+

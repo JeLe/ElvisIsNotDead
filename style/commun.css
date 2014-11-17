@@ -28,15 +28,17 @@ p {
 
 
 
-
 /*Les elements de style propre au haut de page*/
 header{
     background-color: #33cc33;
     font-family: Flex, sans-serif;
     position: relative;
+    margin-bottom : 4px;
 }
 
-
+header img{
+    height:100%;
+}
 
 
 #left {
@@ -150,7 +152,7 @@ footer a  {
 
 footer {
     background-color: #ffcc00;
-    
+    width: 100%;
 }
 
 .clearer {
