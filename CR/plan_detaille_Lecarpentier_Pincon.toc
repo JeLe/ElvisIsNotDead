@@ -1,0 +1,14 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Intro}{1}
+\contentsline {subsection}{\numberline {1.1}Titre, description du contenu}{1}
+\contentsline {subsection}{\numberline {1.2}Pourquoi ces choix ?}{2}
+\contentsline {subsection}{\numberline {1.3}Logiciels et langages utilis\IeC {\'e}s}{2}
+\contentsline {section}{\numberline {2}Structures du Site}{2}
+\contentsline {subsection}{\numberline {2.1}Plan s\IeC {\'e}mantique du site}{2}
+\contentsline {subsection}{\numberline {2.2}Structure du menu de navigation}{2}
+\contentsline {subsection}{\numberline {2.3}Plan navigationnel du site}{2}
+\contentsline {subsection}{\numberline {2.4}Organisation des dossiers}{2}
+\contentsline {section}{\numberline {3}Qu'avons nous voulu faire ?}{2}
+\contentsline {subsection}{\numberline {3.1}Premi\IeC {\`e}re version en HTML/CSS}{2}
+\contentsline {subsection}{\numberline {3.2}Ajout de javascript}{2}
+\contentsline {section}{\numberline {4}Solutions techniques pour r\IeC {\'e}aliser le site}{3}
