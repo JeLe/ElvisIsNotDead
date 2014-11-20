@@ -9,15 +9,18 @@ function main(){
 
 }
 
-navMenu = new Array();
+navMenu = [[Musique, [Beauregard, Jazz sous les Pommiers]], [Cinéma, []], [Tradition, [Festival médiéval, Cidre et Dragons]]];
 
 function header(){
     //creation de tous les types d'éléments dont on aura besoin.
     var nav = document.createElement("nav");
     var div = document.createElement("div");
+    var anchor = document.createElement("a");
+    var list = document.createElement("ul");
+    var listElement = document.createElement("li");
+
     var classAttr = document.createAttribute("class");
     var idAttr = document.createAttribute("id");
-    var anchor = document.createElement("a");
     var href = document.createAttribute("href");
     var src = document.createAttribute("src");
     var alt = document.createAttribute("alt");
