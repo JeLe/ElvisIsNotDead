@@ -3,8 +3,6 @@
 window.onload = main;
 
 function main(){
-    //et tout d'abord le header
-
     header();
     
 }
@@ -18,7 +16,11 @@ function header(){
     //each appending must be in new line. this is crap.
     //this method goes from top to bottom. (kinda...)
     
-    
+    var homeTitle = document.createElement("div");
+    homeTitle.setAttribute("id", "left");
+    var homeLink = document.createElement("a");
+    homeLink.src="#";
+    homeLink.appendChild(document.createElement("img"));
     
     //document.createElement("ul")); //can this be done at the end ?
     var firstUl = document.createElement("ul"); //thanks to this variable ?
@@ -58,75 +60,3 @@ function header(){
  }
 
 
-/*
-
-
-var d = new Date(); //this is to try to benchmark the function...
-//creation de tous les types d'éléments dont on aura besoin.
-   idAttr.value = "left";
- var leftDiv = div.appendChild(idAttr);//removeChild(firstChild).appendChild(idAttr); //this is just in case..
- 
-// tous les types d'attributs possibles..
-
-var classAttr = document.createAttribute("class");
-//var idAttr = document.createAttribute("id");
-//var src = document.createAttribute("src");
-//var alt = document.createAttribute("alt");
-//et apres on change juste les valeurs et on mets tout dans un shaker ! :)
-//    classAttr.value = "fancy_dropdown_menu";
-
-
-
-
-var href = document.createAttribute("href");
-href.value = "#";
-var anchor = document.createElement("a");
-anchor.setAttributeNode(href);
-
-var content = [];
-
-for(var i in navMenu){
-    
-    //if you append two children to the same thing, do it in two seperate lines
-    
-    //et on doit pouvoir ajouter facilement des elements :)
-    var lastLevel =[];
-    for(n=1; n!=i.length; n++ ){ //skip first elemnt
-        //en fait, il faut commencer par faire le dernier niveau, et petit a petit on remonte...
-        //donc la on fait le bon lien et onle mets dans un li
-        var a = document.createElement("a");
-        href.value = i[n][0];//i hope href isn't a reference ...
-        a.setAttributeNode(href);
-        
-        //et on le met dans lastLevel.
-        lastLevel.push(document.createElement("li").appendChild(a.appendChild(document.createTextNode(i[n][1]))));
-    }
-    //at this point, lastLevel is full, so put it's content in a ul.
-    
-    var lastUl = document.createElement("ul");
-    for(var n in lastLevel){
-        lastUl.appendChild(n);
-    }
-    
-    //now create firts level, with an anchor an lastUl
-    
-    firstLi = document.createElement("li").appendChild(anchor.appendChild(document.createTextNode(i[0])));
-    console.log(firstLi);
-    //content.push(firstLi.appendChild(lastUl));
-    //content.push(firstLi.appendChild(document.createTextNode("iuvpbno")));
-    
-}
-
-//now all the content is generated from navMenu.
-//all we need to do is put it all together.
-//    var menuDiv = document.createElement("div").appendChild(classAttr);
-//   menuDiv.class = "fancy_dropdown_menu";
-
-ul = document.createElement("ul");
-for(var j in content){
-    ul.appendChild(j);
-}
-
-document.getElementsByTagName("header")[0].appendChild(ul);
-
-*/
