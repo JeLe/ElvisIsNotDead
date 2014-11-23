@@ -46,18 +46,10 @@ iframe {
 #first{
     position: absolute;
     top:0;
+opacity:.5;
 }
 
 
-#next {
+.arrows {
 position : absolute;
-right: 0;
-top :30%;
-}
-
-#previous{
-    position: absolute;
-
-left: 0;
-top: 30%;
 }
