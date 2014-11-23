@@ -23,7 +23,7 @@ function header(){
     //document.createElement("ul")); //can this be done at the end ?
     var firstUl = document.createElement("ul"); //thanks to this variable ?
 
-    for (element in navMenu){
+    for (var element in navMenu){
         var li = document.createElement("li");
         var ul = document.createElement("ul");
         li.appendChild(ul); //this can be simplified
