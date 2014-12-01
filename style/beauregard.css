@@ -1,40 +1,9 @@
-#content{
-    margin:5% 0 28% 0;
-}
-header{
-    background-color: #33cc33;
-    top:0px;
-    left:0px;
-    font-family: Flex, sans-serif;
-    position: fixed;
-    width:100%;
-    margin: 2px;
-}
-
-footer {
-    position: fixed;
-    bottom:0px;
-    left:0px;
-    background-color: #ffcc00;
-    width: 100%;
-    margin: 2px;
-    
-}
 iframe {
-    float: left;
-    width: 45%;
+float: left;
+width: 45%;
 }
 
-article>#intro ,article>#fish, article>#iggy, article>#maestro, article>#franz{
-    float: left;
-    margin-top:10%;
-    padding-top:3%;
-    width: 45%;
-}
-
-.button{
-    position: fixed;
-    top: 10%;
-    width: 35%;
-    right: 5%;
+article>#intro{
+float: right;
+width: 48%;
 }
