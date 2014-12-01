@@ -1,10 +1,9 @@
 
 
-var navMenu = [["Musique", ["beauregard.html", "Beauregard"], ["jazz.html", "Jazz sous les Pommiers"]], ["Cinéma", ["deauville.html", "Festival de deauville"]], ["Tradition", ["medieval.html", "Festival médiéval de Bayeux"], ["cidre.html", "Cidre et Dragons"]]];
+var navMenu = [["Musique", ["beauregard.html", "Beauregard"], ["jazz.html", "Jazz sous les Pommiers"]], ["Cinéma", ["deauville.html", "Festival de deauville"]], ["Tradition", ["medieval.html", "Festival médiéval de Bayeux"], ["cidre.html", "Cidre et Dragons"]], ["Tradition", ["medieval.html", "Festival médiéval de Bayeux"], ["cidre.html", "Cidre et Dragons"]]];
 
 
 function header(){
-    
     //cette fonction construit le header dans son ensemble, générant le menu de navigation à partir d'une liste.
     //each appending must be in new line. this is crap.
     //this method goes from top to bottom. (kinda...)
@@ -46,8 +45,20 @@ function header(){
         }
     }
     
-    
     document.getElementsByTagName("header")[0].appendChild(dropDown);
+
+    
+    //un peu de style pour le header automatique :
+    var li = document.getElementsByTagName("ul")[0].getElementsByTagName("li");
+    for (i=0; i<li.length; i++){
+
+        console.log(li[i], li[i].parentNode.parentNode);
+        if ( li[i].parentNode.parentNode == document.getElementsByTagName("nav")[0]){
+            li[i].style.width = 99/navMenu.length + "%";
+        }
+    }
+    
+    
 //document.body.appendChild(document.adoptNode(firstUl)); //this works, can be good for putting menu in an other container.
  }
 

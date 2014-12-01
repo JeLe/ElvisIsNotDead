@@ -26,7 +26,7 @@ p {
     font-family: Quicksand, sans-serif;
 }
 
-
+@media (min-width: 700px){
 
 /*Les elements de style propre au haut de page*/
 header{
@@ -34,6 +34,7 @@ header{
     font-family: Flex, sans-serif;
     position: relative;
     margin-bottom : 4px;
+    height : 50px; /*important...*/
 }
 
 header img{
@@ -45,7 +46,7 @@ header img{
     float:left;
     width : 35%;
 }
-.fancy_dropdown_menu {
+nav {
     float : right;
     width:60%;
 }
@@ -69,7 +70,7 @@ nav a {
     
 }
 
-.fancy_dropdown_menu ul {
+nav ul {
     list-style:none; /* removes the bullets */
     padding: 0;
     margin:0;
@@ -78,39 +79,39 @@ nav a {
 
 
 /*premier niveau*/
-.fancy_dropdown_menu > ul > li {
+nav > ul > li {
     float:left;
-    width:33%;
+    /*width:33%;*/
     border-left:1px solid white;
     position:relative;
 }
 
 /*deuxieme niveau*/
-.fancy_dropdown_menu > ul > li > ul {
+nav > ul > li > ul {
     display: none;
     position:absolute;
     width:100%; /*comme ca les sous menus font la meme taille que le parent ;)*/
 }
 
 /*et comme on sait sur quel truc on va cliquer.*/
-.fancy_dropdown_menu > ul > li:hover {
+nav > ul > li:hover {
     background: #2db34a;
 }
 
 
 /*dans les sous menus aussi !*/
 
-.fancy_dropdown_menu > ul > li > ul > li:hover {
+nav > ul > li > ul > li:hover {
     background: #2db34a;
 }
 
 /*rendre visible le sous menu*/
-.fancy_dropdown_menu > ul > li:hover ul {
+nav > ul > li:hover ul {
     display :block;
 }
 
 /* et quelques couleurs en plus pour finir */
-.fancy_dropdown_menu > ul > li > ul > li {
+nav > ul > li > ul > li {
     background: red;
 }
 
@@ -153,6 +154,8 @@ footer a  {
 footer {
     background-color: #ffcc00;
     width: 100%;
+}
+
 }
 
 .clearer {

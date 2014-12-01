@@ -3,11 +3,11 @@ window.onload = main;
 function main(){
     header(); //cette fonction vient de commun :)
     setSizes();
-    sliderInterval = setInterval(slider, 4000);
+    sliderChange = setInterval(slider, 4000);
     document.getElementById("link").onclick= goToSlide;
     //il faut zussi ajiuter un truc qui remet le timer a 0
-    document.getElementsByClassName("arrows")[0].onclick= function(){if(I>1)I=I-2; slider()};//ca ca bug...
-    document.getElementsByClassName("arrows")[1].onclick= function(){slider()};
+    document.getElementsByClassName("arrows")[0].onclick= goToPrevious;
+    document.getElementsByClassName("arrows")[1].onclick= goToNext;
     window.onresize = setSizes;
 }
 
@@ -42,6 +42,10 @@ var I=0; //global index also used as counter, modulo 3.
 
 function slider(){
     //I is now incremented, but cannot be more than 2.
+    if (slider.arguments.length > 0) {
+        if (I>0) I=I-2;
+        else I=1;
+    }
     I++;
     if (I==3){I=0;}
 
@@ -50,9 +54,23 @@ function slider(){
 
 }
 
+function goToNext(){
+    clearInterval(sliderChange);
+    slider();
+    sliderChange = sliderInterval = setInterval(slider, 4000);
+}
+
+
+function goToPrevious(){
+    clearInterval(sliderChange);
+    
+    slider(1);
+    sliderChange = sliderInterval = setInterval(slider, 4000);
+}
+
 
 function goToSlide(){
-    clearInterval(sliderInterval);
+    clearInterval(sliderChange);
     document.getElementById("slider").style.display = "none";
     document.getElementById(images[I][0]).style.display = "block";
 }
