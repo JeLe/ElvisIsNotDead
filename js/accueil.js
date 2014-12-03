@@ -15,11 +15,17 @@ function main(){
 
 
 function setSizes(){
-    
-    //here we're gonna need a switch, kinda like the css @media...
-    
+    //et la dedans sur le style du reste...
+    setStyle();
+
+    var landscape = window.innerHeight < window.innerWidth;
+
     // ici on agit sur le style du slider
     var img = document.getElementById("slider").getElementsByTagName("img")[0];
+
+    
+    if (window.innerHeight > 540 && window.innerWidth > 960 && landscape) {
+
     //et on la met à la bonne hauteur
     img.style.height = window.innerHeight*0.8+"px";
     //et on la centre.
@@ -35,8 +41,11 @@ function setSizes(){
     document.images[3].parentNode.style.top = (img.clientHeight-document.images[3].clientHeight)/2+"px";
     document.images[3].parentNode.style.left = (window.innerWidth-img.clientWidth)/2+img.clientWidth-document.images[3].clientWidth+"px";
 
-    //et la dedans sur le style du reste...
-    setStyle();
+    }
+    else if(landscape){
+    
+    
+    }
     
 }
 

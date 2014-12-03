@@ -71,27 +71,28 @@ function load(){
 
 function setStyle(){
     var landscape = window.innerHeight < window.innerWidth;
-    var portrait = !landscape;
-    
-    
-    //taille du header. Importatnt, sinon il n'est pas displayed...
-    //les header et footer sont dynamiques :)
-    $("header a").css("font", window.innerHeight*0.07/3+"px/"+window.innerHeight*0.07+"px Junction, sans-serif");
-    $("footer a").css("font", window.innerHeight*0.07/3+"px/"+window.innerHeight*0.07+"px Junction, sans-serif");
-    
-    document.getElementsByTagName("header")[0].style.height = window.innerHeight*0.08+"px";
-    document.getElementsByTagName("footer")[0].style.height = window.innerHeight*0.08+"px";
-
+    //var portrait = !landscape; Pour l'instant, rien ne marche en mode portrait...
     
     
     //cela correspond à nos &media queries
     if (window.innerHeight > 540 && window.innerWidth > 960 && landscape) {
-        console.log("big");
-
+        //on commence par vérifier que le nav est a la bonne place.
+        if (document.getElementsByTagName("nav")[0].parentNode == document.getElementById("asideNav")) {
+            moveNavToHeader();
+            console.log("nav in header ");
+        }
+        
+        //taille du header. Importatnt, sinon il n'est pas displayed...
+        //les header et footer sont dynamiques :)
+        $("header a").css("font", window.innerHeight*0.07/3+"px/"+window.innerHeight*0.07+"px Junction, sans-serif");
+        $("footer a").css("font", window.innerHeight*0.07/3+"px/"+window.innerHeight*0.07+"px Junction, sans-serif");
+        
+        document.getElementsByTagName("header")[0].style.height = window.innerHeight*0.08+"px";
+        document.getElementsByTagName("footer")[0].style.height = window.innerHeight*0.08+"px";
     
         //un peu de style pour le menu deroulant automatique :
         var li = document.getElementsByTagName("ul")[0].getElementsByTagName("li");
-        for (i=0; i<li.length; i++){
+        for (var i=0; i<li.length; i++){
             if ( li[i].parentNode.parentNode == document.getElementsByTagName("nav")[0]){
                 li[i].style.width = 99/navMenu.length + "%";
             }
@@ -101,15 +102,56 @@ function setStyle(){
     else if(landscape){
         //mobile version
         // et du coup le menu déroulant va sur le coté :)
-        //prévoir aussi le retour !!
-        
-        dropDown.insertBefore(document.getElementsByTagName("footer")[0]);
+        if (document.getElementById("asideNav") == null) {
+            moveNavToAside();
+        }
         console.log("small");
+        
+        $("header a").css("font", window.innerHeight*0.09/3+"px/"+window.innerHeight*0.09+"px Junction, sans-serif");
+        $("footer a").css("font", window.innerHeight*0.09/3+"px/"+window.innerHeight*0.09+"px Junction, sans-serif");
+        
+        //ca il va falloir le faire en fonction du nombre de trucs dans le menu
+        $("nav a").css("font", window.innerHeight*0.09/3+"px/"+window.innerHeight*0.09+"px Junction, sans-serif");
+        
+        //header et footer height = 10% de la page
+        document.getElementsByTagName("header")[0].style.height = window.innerHeight*0.1+"px";
+        document.getElementsByTagName("footer")[0].style.height = window.innerHeight*0.1+"px";
+        
+        document.getElementsByTagName("aside")[0].style.top = window.innerHeight*0.1+8+"px";
+        document.getElementsByTagName("aside")[0].style.height = window.innerHeight*0.8+"px";
+
+        // et le header fait la meme taille que le menu
+        document.getElementsByTagName("header")[0].style.width = document.getElementsByTagName("aside")[0].offsetWidth+"px";
+        
+        $("nav li").css("width", "100%");
+        
     }
 
 }
 
 
+function moveNavToAside(){
+    
+    //et du coup la maintenant on crée un aside avec le id asideNav et on met le menu nav dedans
+    var aside = document.createElement("aside");
+    aside.setAttribute("id", "asideNav");
+    var nav = document.getElementsByTagName("header")[0].removeChild(document.getElementsByTagName("header")[0].lastChild);
+    document.body.insertBefore(aside, document.getElementsByTagName("footer")[0]);
+    document.getElementById("asideNav").appendChild(nav);
+
+    
+}
+
+function moveNavToHeader(){
+    
+    //et du coup la maintenant on remet le menu nav dans le header
+    var nav = document.getElementById("asideNav").removeChild(document.getElementById("asideNav").lastChild);
+    document.getElementsByTagName("header")[0].appendChild(nav);
+    document.body.removeChild(document.getElementById("asideNav"));
+    document.getElementsByTagName("header")[0].style.width = "100%";
+    
+    
+}
 //ce code est pour voir si l'ucbn est trop long ou pas ...
 
 //if ($('#div-id')[0].scrollWidth >  $('#div-id').innerWidth()) {

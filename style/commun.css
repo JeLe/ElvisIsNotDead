@@ -32,7 +32,6 @@ header{
     background-color: #33cc33;
     font-family: Flex, sans-serif;
     position: relative;
-    margin-bottom : 4px;
 }
 
 header img{
@@ -60,14 +59,14 @@ header a {
 
 nav ul {
     list-style:none; /* removes the bullets */
-    padding: 0;
-    margin:0;
-    z-index: 1;
 }
 
 @media (min-width: 960px) and (min-height: 540px) and (orientation: landscape){
 
 /*Les elements de style propre au haut de page*/
+header{
+    margin-bottom : 4px;
+}
 
 #left {
     float:left;
@@ -76,6 +75,12 @@ nav ul {
 nav {
     float : right;
     width:60%;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    z-index: 1;
 }
 
 /*qui rendent le menu deroulant...*/
@@ -120,7 +125,40 @@ nav > ul > li > ul > li {
 
 }
 
+/*du coup ici c'est la version petite*/
+@media (max-width: 960px) and (max-height: 540px) and (orientation: landscape){
 
+header {
+    background-color : #2db34a;
+}
+
+nav a {
+    padding:5px;
+    text-decoration: none;
+    color:white;
+    font: 15px/45px Junction, sans-serif;
+}
+
+nav > ul {
+    padding: 0;
+    margin: 0;
+}
+
+/*deuxieme niveau*/
+nav > ul > li > ul {
+    background-color : #55cc55;
+
+}
+
+
+aside {
+    position : absolute;
+    background-color : #33aa33;
+}
+
+
+
+}
 
 
 /*les bouttons*/
