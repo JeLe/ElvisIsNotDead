@@ -1,6 +1,8 @@
 #content{
     margin:5% 0 28% 0;
 }
+
+
 header{
     background-color: #33cc33;
     top:0px;
@@ -31,6 +33,7 @@ article>#intro ,article>#fish, article>#iggy, article>#maestro, article>#franz{
     padding-top:3%;
     width: 45%;
 }
+
 
 .button{
     position: fixed;

@@ -1,7 +1,7 @@
-window.onload = main;
+//window.onload = main;
 
 function main(){
-    header(); //cette fonction vient de commun :)
+    //header(); //cette fonction vient de commun :)
     setSizes();
     sliderChange = setInterval(slider, 4000);
     document.getElementById("link").onclick= goToSlide;
@@ -9,30 +9,35 @@ function main(){
     document.getElementsByClassName("arrows")[0].onclick= goToPrevious;
     document.getElementsByClassName("arrows")[1].onclick= goToNext;
     window.onresize = setSizes;
+
 }
+
 
 
 function setSizes(){
     
     //here we're gonna need a switch, kinda like the css @media...
     
-    
+    // ici on agit sur le style du slider
     var img = document.getElementById("slider").getElementsByTagName("img")[0];
     //et on la met à la bonne hauteur
-    img.style.height = window.innerHeight-130+"px";
+    img.style.height = window.innerHeight*0.8+"px";
     //et on la centre.
     img.style.left = (window.innerWidth-img.clientWidth)/2+"px";
     //et remets le footer a la bonne place :
     document.getElementById("slider").style.height = img.clientHeight+4+"px";
     
     //on met les fleches à l bonne taille et a la bonne place
-    document.images[2].style.height = (window.innerHeight-130)/5+"px";
+    document.images[2].style.height = (window.innerHeight*0.8)/5+"px";
     document.images[2].parentNode.style.top = (img.clientHeight-document.images[2].clientHeight)/2+"px";
     document.images[2].parentNode.style.left = (window.innerWidth-img.clientWidth)/2+"px";
-    document.images[3].style.height = (window.innerHeight-130)/5+"px";
+    document.images[3].style.height = (window.innerHeight*0.8)/5+"px";
     document.images[3].parentNode.style.top = (img.clientHeight-document.images[3].clientHeight)/2+"px";
     document.images[3].parentNode.style.left = (window.innerWidth-img.clientWidth)/2+img.clientWidth-document.images[3].clientWidth+"px";
 
+    //et la dedans sur le style du reste...
+    setStyle();
+    
 }
 
 
