@@ -6,20 +6,11 @@ background-color: #e7e7da;
 
 }
 
-<<<<<<< HEAD
 
-header{
-    background-color: #33cc33;
-    top:0px;
-    left:0px;
-    font-family: Flex, sans-serif;
-    position: fixed;
-    width:100%;
-    margin: 2px;
-=======
+
 aside>h2>p{
 margin:3%;
->>>>>>> FETCH_HEAD
+
 }
 
 #content{
@@ -42,19 +33,15 @@ article>section{
     width: 80%;
 }
 
-<<<<<<< HEAD
 
-.button{
-    position: fixed;
-    top: 10%;
-    width: 35%;
-    right: 5%;
-=======
+
+
+
 .button{    
 float: right;
 width: 10%;
 margin: 0 3% 1% 1% ;
 padding: 0.25%;
 display: inline-block;
->>>>>>> FETCH_HEAD
+
 }
