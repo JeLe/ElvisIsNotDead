@@ -100,6 +100,10 @@ function setStyle(){
     
     }
     else if(landscape){
+        //wierd cases : height not big enough
+        //portrait...
+        //en gros quand en grand il est pas assez haut et en petit qu'il l'est trop...
+        
         //mobile version
         // et du coup le menu déroulant va sur le coté :)
         if (document.getElementById("asideNav") == null) {
@@ -149,6 +153,8 @@ function moveNavToHeader(){
     document.getElementsByTagName("header")[0].appendChild(nav);
     document.body.removeChild(document.getElementById("asideNav"));
     document.getElementsByTagName("header")[0].style.width = "100%";
+//    document.getElementById("first").style.removeAttribute("width"); //width = "auto";
+
     
     
 }

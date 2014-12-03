@@ -28,6 +28,7 @@ function setSizes(){
 
     //et on la met à la bonne hauteur
     img.style.height = window.innerHeight*0.8+"px";
+
     //et on la centre.
     img.style.left = (window.innerWidth-img.clientWidth)/2+"px";
     //et remets le footer a la bonne place :
@@ -43,7 +44,12 @@ function setSizes(){
 
     }
     else if(landscape){
-    
+
+        img.style.left = document.getElementById("asideNav").offsetWidth+"px";
+//     img.style.top= document.getElementsByTagName("footer")[0].offsetHeight+"px"; //ca ca marche pas ??
+        img.style.height= window.innerHeight-document.getElementsByTagName("footer")[0].offsetHeight+"px"; //ca ca marche pas ??
+
+
     
     }
     

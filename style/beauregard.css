@@ -1,16 +1,17 @@
 aside{
 float: right;
-width: 15%;
+width: 18%;
 margin: 2%;
 background-color: #e7e7da;
 
 }
 
-
-
 aside>h2>p{
 margin:3%;
+}
 
+article{
+width: 70%;
 }
 
 #content{
@@ -21,10 +22,7 @@ margin:3%;
 }
 
 iframe {
-    float: left;
     height: 60 px;
-    width: 50%;
-    margin: 1% 0 1% 26%;
 }
 
 article>section{
@@ -33,15 +31,9 @@ article>section{
     width: 80%;
 }
 
-
-
-
-
 .button{    
-float: right;
-width: 10%;
+width: 15%;
 margin: 0 3% 1% 1% ;
 padding: 0.25%;
 display: inline-block;
-
 }
