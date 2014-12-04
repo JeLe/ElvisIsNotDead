@@ -9,6 +9,8 @@ function main(){
     document.getElementsByClassName("arrows")[0].onclick= goToPrevious;
     document.getElementsByClassName("arrows")[1].onclick= goToNext;
     window.onresize = setSizes;
+    document.getElementById("cine").onclick = BackToSlides;
+    
 
 }
 
@@ -25,7 +27,11 @@ function setSizes(){
 
     
     if (window.innerHeight > 540 && window.innerWidth > 960 && landscape) {
-
+        // on met les articles a la bonne hauteur pour quand ils seront ouverts.
+        $("article").css("height", window.innerHeight*0.8+"px");
+        $("article").css("overflow", "scroll");
+        
+        
     //et on la met à la bonne hauteur
     img.style.height = window.innerHeight*0.8+"px";
 
@@ -44,6 +50,7 @@ function setSizes(){
 
     }
     else if(landscape){
+        //Ca ca marche pas trop...
 
         img.style.left = document.getElementById("asideNav").offsetWidth+"px";
 //     img.style.top= document.getElementsByTagName("footer")[0].offsetHeight+"px"; //ca ca marche pas ??
@@ -77,7 +84,7 @@ function slider(){
 function goToNext(){
     clearInterval(sliderChange);
     slider();
-    sliderChange = sliderInterval = setInterval(slider, 4000);
+    sliderChange = setInterval(slider, 4000);
 }
 
 
@@ -85,7 +92,7 @@ function goToPrevious(){
     clearInterval(sliderChange);
     
     slider(1);
-    sliderChange = sliderInterval = setInterval(slider, 4000);
+    sliderChange = setInterval(slider, 4000);
 }
 
 
@@ -95,3 +102,10 @@ function goToSlide(){
     document.getElementById(images[I][0]).style.display = "block";
 }
 
+function BackToSlides(){
+    //ca ca marche, il faut juste que ca revienne a partir d'un vrai bouton :)
+    sliderChange = setInterval(slider, 4000);
+    document.getElementById("slider").style.display = "block";
+    document.getElementById(images[I][0]).style.display = "none";
+
+}

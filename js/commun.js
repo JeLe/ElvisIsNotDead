@@ -58,14 +58,22 @@ function load(){
     header();
 
     if (location.href.slice(-12)=="accueil.html" || location.href.slice(-13)=="accueil.html#" ){
-        main();
-        console.log("youpi");
-    }
+            main();
+        
+        }
     else {
         setStyle();
         window.onresize = setStyle;
     }
-
+    
+    
+    //et la derniere chose qu'on fait apres le chargement de la page, c'est de charger les src des iframes, commme ca ils ne ralentissent pas toute la page :)
+    //il faudra juste que ca dépende de sur quelle page on est ...
+    setTimeout(function(){
+               var iframeSrc = ["http://www.dailymotion.com/embed/video/x11kf4c", "http://www.youtube.com/embed/34HluqAbGYA", "http://www.youtube.com/embed/urnKEleBBZc"];
+               for (var i=0; i< document.getElementsByTagName("iframe").length; i++){
+               document.getElementsByTagName("iframe")[i].setAttribute("src", iframeSrc[i]);
+               }}, 2000);
 }
 
 
@@ -130,6 +138,16 @@ function setStyle(){
         $("nav li").css("width", "100%");
         
     }
+    
+    // et ca c'est pour voir si le UCBN dépasse
+
+
+    
+    document.getElementById("UCBN").innerHTML = "Université de Caen Basse-Normandie";
+    console.log(document.getElementById("UCBN").scrollHeight);
+    if (document.getElementById("UCBN").scrollHeight >  document.getElementsByTagName("footer")[0].clientHeight) {
+        document.getElementById("UCBN").innerHTML = "UCBN";
+    }
 
 }
 
@@ -158,10 +176,6 @@ function moveNavToHeader(){
     
     
 }
-//ce code est pour voir si l'ucbn est trop long ou pas ...
 
-//if ($('#div-id')[0].scrollWidth >  $('#div-id').innerWidth()) {
-    //Text has over-flowed
-//}
 
 
