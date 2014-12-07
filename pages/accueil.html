@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="../style/accueil.css"/>
     <!-- ne pas oublier les métadonnées-->
     <!-- et qu'est-ce qu'on fait ? on les oublie !-->
-   <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
-   <script src="../js/jquery.js"></script>
-   
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
+    <script src="../js/jquery.js"></script>
+    
     <script src="../js/accueil.js"></script>
 
     <script src="../js/commun.js"></script>
@@ -21,43 +21,44 @@
       
       <!--ceci est ici, car sera toujours le header-->
       <!--le menu deroulant est genere par le javascript et peut changer de place-->
-        <div id="left">
-          <a href="accueil.html" title="home"><img src="../images/casque-viking.jpg" alt="retour accueil">Normandie - Une terre de culture</a>
-        </div>
-
-
-
+      <div id="homeTitle">
+        <a href="accueil.html" title="home"><img src="../images/casque-viking.jpg" alt="retour accueil">Normandie - Une terre de culture</a>
+      </div>
 
     </header>
     
     <!--Chaque article correspond à un truc caché que quand on clique sur l'image on y va... :) -->
+    <!--Le slider ne peut pas etre un article, parce qu'il ne fait pas sens a lui tout seul-->
+    <!--Et en plus ca peut pas etre une section, car il forme en lui meme un tout et n'a absolument pas le meme role ni la meme structure que les autre sections de la page.-->
+    <!--du coup c'est une div...-->
+    
+    
     <div id="slider">
-      <!--Cette partie ne peut pas etre un article, parce qu'elle ne fait pas sens a elle touts seule-->
-      <!--Et en plus ca peut pas etre une section, car elle forme en elle meme un tout et n'a absolument pas le meme role ni la meme structure que les autre sections de la page.-->
-      <!--du coup c'est une div...-->
-      
-      <!--et mainetenat la div est remplie par le script, donc la suite ne sert plus :)-->
-<!--      <a href="#music"> <img src="../images/musique.jpg" alt="musique" id="first"></a>
- <div class="tooltip"> <h1>a cow</h1> </div>
-      
-      <a href="#cine"> <img src="../images/cinema.jpg" alt="cinema" id="second"> </a>
-    <div class="tooltip"> <h1>horses</h1> </div>
-      
-      <a href="#trad"><img src="../images/tradition.jpg" alt="tradition" id="third"></a>
- <div class="tooltip"> <h1>and sheep ;)</h1> </div>-->
-       <a href="#" id="link"> <img id="first" src="../images/musique.jpg" alt="une image"></a>
-       <a href="#"  class="arrows"><img src="../images/previous-arrow.png" alt="back"></a>
 
-        <a href="#" class="arrows"><img src="../images/next-arrow.png" alt="forth"></a>
+      
+      <a href="#" id="left"> <img src="../images/cinema.jpg" alt="cinema"> </a>
+      <!--<div class="tooltip"> <h1>horses</h1> </div>-->
+      
+      
+      <a href="#" id="mainLink"> <img id="mainImage" src="../images/musique.jpg" alt="une image"></a>
+      
+      <a href="#" id="right"><img src="../images/tradition.jpg" alt="tradition"></a>
+      <!-- <div class="tooltip"> <h1>and sheep ;)</h1> </div>-->
+      
+      
+      
+      <a href="#"  class="arrows"><img src="../images/previous-arrow.png" alt="back"></a>
+
+      <a href="#" class="arrows"><img src="../images/next-arrow.png" alt="forth"></a>
     </div>
     
-    
+
     
     <!--attention, j'ai enlevé les liens des iframes pour que ca charge plus vite !!!-->
     <article id="music" >
       
       <section class="video"><iframe  src="#"></iframe>
-          <!--http://www.dailymotion.com/embed/video/x11kf4c" allowfullscreen>-->
+        <!--http://www.dailymotion.com/embed/video/x11kf4c" allowfullscreen>-->
       </section>
       
       <section class="text"> 
@@ -84,7 +85,7 @@
     <article id="cine">
       
       <section class="video2"><iframe width="640" height="480" src="#"></iframe>
-          <!--src="http://www.youtube.com/embed/34HluqAbGYA" allowfullscreen>-->
+        <!--src="http://www.youtube.com/embed/34HluqAbGYA" allowfullscreen>-->
       </section>
       
       <section class="text2">
@@ -108,7 +109,7 @@
     <article id= "trad">
       
       <section class="video"><iframe width="640" height="480" src="#"></iframe>
-            <!--http://www.youtube.com/embed/urnKEleBBZc" allowfullscreen> -->
+        <!--http://www.youtube.com/embed/urnKEleBBZc" allowfullscreen> -->
       </section>
       
       <section class="text"> 

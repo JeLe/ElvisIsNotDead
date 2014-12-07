@@ -31,7 +31,8 @@ p {
 header{
     background-color: #33cc33;
     font-family: Flex, sans-serif;
-    position: relative;
+    position: absolute;
+    top: 0;
 }
 
 header img{
@@ -49,7 +50,7 @@ a[title=home] img {
 /*menu du haut*/
 /*formats généraux*/
 header a {
-    padding:5px;
+    padding:5px 5px 0 5px;
     display:block;
     text-decoration: none;
     text-align: center;
@@ -62,105 +63,107 @@ nav ul {
 }
 
 @media (min-width: 960px) and (min-height: 540px) and (orientation: landscape){
-
-/*Les elements de style propre au haut de page*/
-header{
-    margin-bottom : 4px;
-}
-
-#left {
-    float:left;
-    width : 35%;
-}
-nav {
-    float : right;
-    width:60%;
-}
-
-nav ul {
-    padding: 0;
-    margin: 0;
-    z-index: 1;
-}
-
-/*qui rendent le menu deroulant...*/
-
-
-/*premier niveau*/
-nav > ul > li {
-    float:left;
-    /*width:33%;*/
-    border-left:1px solid white;
-    position:relative;
-}
-
-/*deuxieme niveau*/
-nav > ul > li > ul {
-    display: none;
-    position:absolute;
-    width:100%; /*comme ca les sous menus font la meme taille que le parent ;)*/
-}
-
-/*et comme on sait sur quel truc on va cliquer.*/
-nav > ul > li:hover {
-    background: #2db34a;
-}
-
-
-/*dans les sous menus aussi !*/
-
-nav > ul > li > ul > li:hover {
-    background: #2db34a;
-}
-
-/*rendre visible le sous menu*/
-nav > ul > li:hover ul {
-    display :block;
-}
-
-/* et quelques couleurs en plus pour finir */
-nav > ul > li > ul > li {
-    background: red;
-}
-
+    
+    /*Les elements de style propre au haut de page*/
+    header{
+	margin-bottom : 4px;
+    width : 100%;
+    }
+    
+    #homeTitle {
+	float:left;
+	width : 35%;
+    }
+    nav {
+	float : right;
+	width:60%;
+    }
+    
+    nav ul {
+	padding: 0;
+	margin: 0;
+	z-index: 1;
+    }
+    
+    /*qui rendent le menu deroulant...*/
+    
+    
+    /*premier niveau*/
+    nav > ul > li {
+	float:left;
+	/*width:33%;*/
+	border-left:1px solid white;
+	position:relative;
+    }
+    
+    /*deuxieme niveau*/
+    nav > ul > li > ul {
+	display: none;
+	position:absolute;
+	width:100%; /*comme ca les sous menus font la meme taille que le parent ;)*/
+    }
+    
+    /*et comme on sait sur quel truc on va cliquer.*/
+    nav > ul > li:hover {
+	background: #2db34a;
+    }
+    
+    
+    /*dans les sous menus aussi !*/
+    
+    nav > ul > li > ul > li:hover {
+	background: #2db34a;
+    }
+    
+    /*rendre visible le sous menu*/
+    nav > ul > li:hover ul {
+	display :block;
+    }
+    
+    /* et quelques couleurs en plus pour finir */
+    nav > ul > li > ul > li {
+	background: red;
+    }
+    
 }
 
 /*du coup ici c'est la version petite*/
 @media (max-width: 960px) and (max-height: 540px) and (orientation: landscape){
-
-header {
-    background-color : #2db34a;
-}
-
-nav a {
-    padding:5px;
-    text-decoration: none;
-    color:white;
-    font: 15px/45px Junction, sans-serif;
-}
-
-nav > ul {
-    padding: 0;
-    margin: 0;
-}
-
-/*deuxieme niveau*/
-nav > ul > li > ul {
-    background-color : #55cc55;
-
-}
-
-
-#asideNav {
-    position : absolute;
-    background-color : #33aa33;
-}
-
-footer{
-position: absolute;
-bottom:0;
-}
-
+    
+    header {
+	background-color : #2db34a;
+    }
+    
+    nav a {
+	padding:5px;
+	text-decoration: none;
+	color:white;
+	font: 15px/45px Junction, sans-serif;
+	display: block;
+    }
+    
+    nav > ul {
+	padding: 0;
+	margin: 0;
+    }
+    
+    /*deuxieme niveau*/
+    nav > ul > li > ul {
+	background-color : #55cc55;
+	
+    }
+    
+    
+    #asideNav {
+	position : absolute;
+	background-color : #33aa33;
+    }
+    
+/*    footer{
+	position: absolute;
+	bottom:0;
+    }*/
+    
 }
 
 
@@ -171,6 +174,7 @@ bottom:0;
     background: #00b7ea;
     border-radius: 2px;
 }
+
 
 .button a {
     text-align: center;
@@ -201,6 +205,8 @@ footer a  {
 footer {
     background-color: #ffcc00;
     width: 100%;
+    position : absolute;
+
 }
 
 

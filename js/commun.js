@@ -94,8 +94,9 @@ function setStyle(){
         //les header et footer sont dynamiques :)
         $("header a").css("font", window.innerHeight*0.07/3+"px/"+window.innerHeight*0.07+"px Junction, sans-serif");
         $("footer a").css("font", window.innerHeight*0.07/3+"px/"+window.innerHeight*0.07+"px Junction, sans-serif");
-        
         document.getElementsByTagName("header")[0].style.height = window.innerHeight*0.08+"px";
+        // position du footer : style.top = header.height + contenuPrincipal.height (i.e. 80%)
+        document.getElementsByTagName("footer")[0].style.top = window.innerHeight*0.08+window.innerHeight*0.8+"px";//document.getElementsByTagName("header")[0].clientHeight+document.getElementById("slider").clientHeight+"px";
         document.getElementsByTagName("footer")[0].style.height = window.innerHeight*0.08+"px";
     
         //un peu de style pour le menu deroulant automatique :

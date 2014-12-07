@@ -1,0 +1,12 @@
+window.onload=load;
+
+
+function load(){
+
+document.getElementById("youpi").onclick=youpi;
+}
+
+function youpi(){
+container = document.getElementById("container");
+var mySlide = new Fx.Slide(container, {mode :'horizontal'}).hide().toggle();
+}
