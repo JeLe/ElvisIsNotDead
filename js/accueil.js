@@ -35,8 +35,7 @@ function setSizes(){
         img.style.height = window.innerHeight*0.8+"px";
         document.getElementById("left").firstElementChild.style.height = window.innerHeight*0.8+"px";
         document.getElementById("right").firstElementChild.style.height = window.innerHeight*0.8+"px";
-        // on met la div slider a la bonne place
-        document.getElementById("slider").style.top= document.getElementsByTagName("header")[0].offsetHeight+"px";
+
         
 
         //et on la centre.
@@ -94,18 +93,18 @@ function slider(){
     
     var img = document.getElementById("mainImage");
 
-    document.getElementById("mainLink").firstElementChild.style.opacity = ".4";
+   // document.getElementById("mainLink").firstElementChild.style.opacity = ".4";
     document.getElementById("mainLink").style.left = img.clientWidth+(window.innerWidth-img.clientWidth)/2+"px";
-    document.getElementById("left").firstElementChild.style.opacity = ".9";
+    /*document.getElementById("left").firstElementChild.style.opacity = ".9";
     document.getElementById("left").style.left = (window.innerWidth-img.clientWidth)/2+"px";
     document.getElementById("right").style.left = -img.clientWidth+(window.innerWidth-img.clientWidth)/2+"px";
     
     
     //et on permutte les ids
     document.getElementById("mainLink").setAttribute("id", "buffer");
-    document.getElementById("left").setAttribute("id", "mainLink");
+   /* document.getElementById("left").setAttribute("id", "mainLink");
     document.getElementById("right").setAttribute("id", "left");
-    document.getElementById("mainLink").setAttribute("id", "right");
+    document.getElementById("mainLink").setAttribute("id", "right");*/
     
 
     // on place la bonne image dans la division

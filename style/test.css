@@ -1,19 +1,25 @@
 
 
-/*le slider avec les images sur lesquelles on peut cliquer.*/
-
 /*ca c'est la grande image*/
 #slider{
     position: relative;
     border:1px solid red;
     width:100%;
     overflow : hidden;
+    height : 500px;
 }
 
 #slider a{
     position: absolute;
+    -webkit-transition: left .8s ease-in;
+    transition: left .8s ease-in;
 }
 
+a img{
+height : 100%;
+width : auto;
+}
+/*
 #left, #right{
     opacity : .4;
 
@@ -45,48 +51,4 @@
     transition: opacity .8s;
 }
 
-
-
-/*le style des articles quand on clique sur une image*/
-
-article{
-display:none;
-}
-
-section {
-    width:40%;
-    margin: 2.5%;
-}
-
-section p{
-    text-align: justify;
-    padding-left: 5%;
-}
-
-
-.video{
-    float: left;
-    padding-left: 2.5%;
-}
-
-.text{
-    float: right;
-    padding-right: 2.5%;
-}
-
-
-.video2{
-    float: right;
-    padding-right:2.5%;
-}
-
-.text2{
-    float: left;
-    padding-left:6%;
-}
-
-iframe {
-    width:90%;
-    
-}
-
+*/
