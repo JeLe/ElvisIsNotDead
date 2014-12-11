@@ -64,8 +64,10 @@ function load(){
     else {
         setStyle();
         window.onresize = setStyle;
+        window.onresize = setSizes;
+        
     }
-    
+
     
     //et la derniere chose qu'on fait apres le chargement de la page, c'est de charger les src des iframes, commme ca ils ne ralentissent pas toute la page :)
     //il faudra juste que ca dépende de sur quelle page on est ...

@@ -3,14 +3,14 @@
 function main(){
     //header(); //cette fonction vient de commun :)
     setSizes();
-    sliderChange = setInterval(slider, 4000);
-    document.getElementById("mainLink").onclick= goToSlide;
-    //il faut zussi ajiuter un truc qui remet le timer a 0
-    document.getElementsByClassName("arrows")[0].onclick= goToPrevious;
-    document.getElementsByClassName("arrows")[1].onclick= goToNext;
+  //  document.getElementById("mainLink").onclick= goToSlide;
+
+  //  document.getElementsByClassName("arrows")[0].onclick= goToPrevious;
+   // document.getElementsByClassName("arrows")[1].onclick= goToNext;
     window.onresize = setSizes;
     document.getElementById("cine").onclick = BackToSlides;
-    
+    mySlider = new Slider(document.getElementById("slider"), "right", true);
+    setInterval(function(){mySlider.StepForward.apply(mySlider);}, 3000);
 
 }
 
@@ -33,25 +33,25 @@ function setSizes(){
         
         // et on met les images à la bonne hauteur
         img.style.height = window.innerHeight*0.8+"px";
-        document.getElementById("left").firstElementChild.style.height = window.innerHeight*0.8+"px";
-        document.getElementById("right").firstElementChild.style.height = window.innerHeight*0.8+"px";
+   /*     document.getElementById("left").firstElementChild.style.height = window.innerHeight*0.8+"px";
+        document.getElementById("right").firstElementChild.style.height = window.innerHeight*0.8+"px";*/
 
         
 
-        //et on la centre.
+  /*      //et on la centre.
         document.getElementById("mainLink").style.left = (window.innerWidth-img.clientWidth)/2+"px";
         //et on place les deux autres.
         document.getElementById("right").style.left = img.clientWidth+(window.innerWidth-img.clientWidth)/2+"px";
         document.getElementById("left").style.left = -img.clientWidth+(window.innerWidth-img.clientWidth)/2+"px";
         
-        
+        */
         document.getElementById("slider").style.height = img.clientHeight+"px";
     
         
         
         
         
-        var leftArrow = document.getElementsByClassName("arrows")[0].firstElementChild;
+   /*     var leftArrow = document.getElementsByClassName("arrows")[0].firstElementChild;
         var rightArrow = document.getElementsByClassName("arrows")[1].firstElementChild;
 
         //on met les fleches à l bonne taille et a la bonne place
@@ -61,7 +61,7 @@ function setSizes(){
         rightArrow.style.height = (window.innerHeight*0.8)/5+"px";
         rightArrow.parentNode.style.top = (img.clientHeight-rightArrow.clientHeight)/2+"px";
         rightArrow.parentNode.style.left = (window.innerWidth-img.clientWidth)/2+img.clientWidth-rightArrow.clientWidth+"px";
-
+*/
     }
     
     else if(landscape){
@@ -77,40 +77,104 @@ function setSizes(){
     
 }
 
+function Slider(){
+    //extraction des arguments.
+    this.DOMElement = Slider.arguments[0];
+    this.elements = Slider.arguments[0].children;
+    if (Slider.arguments[1] == "left") this.dir = 1;
+    else this.dir =-1;
+    if (Slider.arguments.length == 2) this.recalc = Slider.arguments[2];
+    // suite de l'init
+    this.index = 0;
+    this.exception = false;
+
+    
+    //calcul des positions des 3 morceaux
+    this.bufferPosRight = 5000+"px";
+    this.bufferPosLeft = -5000+"px";
+    
+    
+    //c'est ca le plus gros probleme... a partir de quoi on calcule les positions...
+    // on mets tout en place
+    
+    for (var i=0; i<this.elements.length; i++){
+        if (this.elements[i].firstElementChild.tagName == "img")
+            this.elements[i].firstElementChild.style.height = this.DOMElement.clientHeight+"px";
+        else this.elements[i].firstElementChild.style.height = this.DOMElement.clientHeight+"px";
+        this.elements[i].style.left = this.bufferPosRight;
+    }
+    
+    
+    this.pos1 = (this.DOMElement.clientWidth - this.elements[1].clientWidth)/2 +"px";
+    this.pos2 = parseInt(this.pos1)+ this.elements[1].clientWidth +"px";
+    this.pos0 = parseInt(this.pos1)-this.elements[1].clientWidth +"px";
+    
+    if (this.elements.length > 3){
+        this.bufferPosRight = parseInt(this.pos2)+ this.elements[1].clientWidth+"px";
+        this.bufferPosLeft = parseInt(this.pos0)- this.elements[1].clientWidth+"px";
+    }
+    else {
+        //si il n'y a que trois elements dans la liste, cela pose des problemes
+        //il faut en effet que l'element en position 0 y reste pour sortir vers la gauche ;
+        // et qu'en meme temps il soit positionné en bufferRight pour rentrer de la droite...
+        // il doit donc etre en double dans la liste pour un peu de temps ! (en fait ili sera toujours la mais pas toujours utile...
+        this.bufferPosRight = parseInt(this.pos2)+ this.elements[1].clientWidth+"px";
+        this.bufferPosLeft = parseInt(this.pos0)- this.elements[1].clientWidth+"px";
+
+        this.exception = true;
+        var test = this.elements[0].cloneNode(true);
+        this.elements[this.elements.length] = test;
+        console.log(this, this.elements);
+    }
+    
+    this.elements[0].style.left = this.pos0;
+    this.elements[1].style.left = this.pos1;
+    this.elements[2].style.left = this.pos2;
+    
+    
+    /*jusqu'ici...*/
+    
+    this.elements[0].style.opacity = ".6";
+    this.elements[2].style.opacity = ".6";
+    
+    
+    
+    
+    this.StepForward = function(){
+        if (this.StepForward.arguments.length > 0)
+            this.index+= this.StepForward.arguments.length-1;
+        else
+            this.index++;
+
+        if (this.exception === true){
+            var test = 0;
+        }
+        
+        // et plein de modulos pour revenir au debut au aller a la fin du array
+        this.elements[(this.index-1)%this.elements.length].style.left = this.bufferPosLeft;
+        
+        this.elements[this.index%this.elements.length].style.opacity = ".6";
+        this.elements[this.index%this.elements.length].style.left = this.pos0;
+        this.elements[(this.index+1)%this.elements.length].style.opacity = "1";
+        this.elements[(this.index+1)%this.elements.length].style.left = this.pos1;
+        this.elements[(this.index+2)%this.elements.length].style.opacity = ".6";
+        this.elements[(this.index+2)%this.elements.length].style.left = this.pos2;
+
+        
+        var that = this;
+        setTimeout(function(){
+        that.elements[(that.index-1)%that.elements.length].setAttribute("class", "notransition");
+        that.elements[(that.index-1)%that.elements.length].style.left = that.bufferPosRight;
+        that.elements[(that.index-1)%that.elements.length].offsetHeight;
+                   that.elements[(that.index-1)%that.elements.length].removeAttribute("class", "notransition");}, 900);//parce que la transition elle dure 800 ms et se fait toutes les 3000ms.
+        
+    };
+    
+}
 
 
-var images = [["music", "../images/musique.jpg"],["cine", "../images/cinema.jpg"],["trad", "../images/tradition.jpg"]];
 var I=0; //global index also used as counter, modulo 3.
 
-function slider(){
-    //I is now incremented, but cannot be more than 2.
-    if (slider.arguments.length > 0) {
-        if (I>0) I=I-2;
-        else I=1;
-    }
-    I++;
-    if (I==3){I=0;}
-    
-    var img = document.getElementById("mainImage");
-
-   // document.getElementById("mainLink").firstElementChild.style.opacity = ".4";
-    document.getElementById("mainLink").style.left = img.clientWidth+(window.innerWidth-img.clientWidth)/2+"px";
-    /*document.getElementById("left").firstElementChild.style.opacity = ".9";
-    document.getElementById("left").style.left = (window.innerWidth-img.clientWidth)/2+"px";
-    document.getElementById("right").style.left = -img.clientWidth+(window.innerWidth-img.clientWidth)/2+"px";
-    
-    
-    //et on permutte les ids
-    document.getElementById("mainLink").setAttribute("id", "buffer");
-   /* document.getElementById("left").setAttribute("id", "mainLink");
-    document.getElementById("right").setAttribute("id", "left");
-    document.getElementById("mainLink").setAttribute("id", "right");*/
-    
-
-    // on place la bonne image dans la division
-    //document.getElementById("slider").getElementsByTagName("img")[0].src = images[I][1];
-
-}
 
 function goToNext(){
     clearInterval(sliderChange);

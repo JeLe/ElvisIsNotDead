@@ -11,8 +11,18 @@
 
 #slider a{
     position: absolute;
-    -webkit-transition: left .8s ease-in;
-    transition: left .8s ease-in;
+    -webkit-transition: left 1s ease-in;
+    transition: left 1s ease-in;
+    -moz-transition: left 1s ease-in;
+
+}
+
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  -ms-transition: none !important;
+  transition: none !important;
 }
 
 a img{

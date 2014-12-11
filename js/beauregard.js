@@ -14,5 +14,4 @@ function load(){
     //document.getElementsByClassName("button")[1].onclick=zwoush;
 }
 
-window.onload=load;
     
