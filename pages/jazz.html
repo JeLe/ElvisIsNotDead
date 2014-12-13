@@ -1,104 +1,122 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8"/>
-        <link rel="stylesheet" href="../style/commun.css"/>   <!-- feuille de style à déclarer -->
-        <link rel="stylesheet" href="../style/accueil.css"/>   <!-- feuille de style à déclarer -->
-		<link rel="stylesheet" href="../style/jazz.css"/>   <!-- feuille de style à déclarer -->
-        <!--attention, j'ai ecrit culutre..-->
-        <!-- ne pas oublier les métadonnées-->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-
-        <script src="../js/commun.js"></script>
-
-        <title>Normandie et Culutre</title>
-    </head>
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="../style/commun.css"/>   <!-- feuille de style à déclarer -->
+    <!--attention, j'ai ecrit culutre..-->
+    <!-- ne pas oublier les métadonnées-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     
-    <body>
-        <header>
-            <div id="homeTitle">
-                <a href="accueil.html" title="home"><img src="../images/casque-viking.jpg" alt="retour accueil">Normandie - Une terre de culture</a>
-            </div>
-        </header>
-        <!------------------------------>
-        <h1>Jazz sous les Pommiers</h1>
-        <iframe scrolling="no" frameborder="0" allowTransparency="true"
-		src="http://www.deezer.com/plugins/player?autoplay=false&playlist=true&width=700&height=240&cover=true&type=playlist&id=843532521&title=&app_id=undefined"
-		width="700" height="240">
-		</iframe>
-        <section>
-			<p>Le festival Jazz sous les pommiers a lieu tous les ans à Coutances (Manche). Il a été conçu à la suite d'une
-			rencontre entre deux amateurs locaux, Thierry Giard, enseignant, et Gérard Houssin, animateur culturel. La première
-			édition a eu lieu en 1982. Le festival se tient traditionnellement pendant la semaine de l'Ascension.
-			La programmation très éclectique va du jazz « New Orleans » à la musique électronique. Elle inclut également de nombreux spectacles
-			de rue. Les artistes invités sont aussi bien des musiciens locaux que de grandes vedettes internationales.
-			En 2006, Jazz sous les pommiers totalisait plus de 1 000 concerts qui ont été suivis par 500 000 spectateurs, dont 350 000 payants.
-			En 2010 le festival a connu un record de fréquentation avec 37 000 spectateurs. Le festival fête sa 30e édition en 2011, invitant des
-			artistes qui sont déjà venus jouer au festival mais également des inédits à Coutances. Cet anniversaire s'est terminé avec la
-			« Folle Parade », une déambulation de 2 h 30 dans le centre ville de Coutances le 4 juin.
-			Salles de spectacle[modifier | modifier le code]
-Lors du festival il y a quatre scènes payantes en intérieur :
+    <script src="../js/commun.js"></script>
+    
+    <title>Normandie et Culutre</title>
+  </head>
+  
+  <body>
+    <header>
+      <div id="homeTitle">
+        <a href="accueil.html" title="home"><img src="../images/casque-viking.jpg" alt="retour accueil">Normandie - Une terre de culture</a>
+      </div>
+    </header>
 
-La salle Marcel Hélie, gymnase transformé en salle de spectacle (1 400 places)
-Le théâtre municipal (600 places)
-Le Magic Mirrors (420 places)
-Les caves des Unelles (350 places pour le jazz club ; 100 comme salle de concert)
-À ces quatre scènes où se produisent des spectacles payants tous les jours peuvent s'ajouter deux autres scènes en extérieur :
+    <aside id="infos">
+      <h2>Beauregard</h2>
+      <img src="../images/jazz-logo.jpg" alt="logo jslp">
+      <h3>Dates</h3>
+      <p>3, 4 et 5 Juillet 2015</p>
+      <h3>Billeterie</h3>
+      <p>Fnac Spectacles</p><br>
+      <p><a href="http://www.jazzsouslespommiers.com/page.php?id_section=4&id_categorie=43">
+      Jazz sous les pommiers</a></p>
+      <h3>Tarifs</h3>
+      <p>
+	Pass 1 jour : 43€ <br><br>
+	Pass 2 jour : 73€ <br><br>
+	Pass 3 jour (offre fan):80€ <br><br>
+	Pass 3 jour : 98€ <br><br>
+      </p>
+      <h3>Lieu</h3>
+      <p>Parc de Beauregard<br>
+	Hérouville-Saint-Clair</p>
+    </aside>
+    
+    <iframe scrolling="no" frameborder="0" allowTransparency="true"
+	    src="http://www.deezer.com/plugins/player?autoplay=false&playlist=true&width=700&height=240&cover=true&type=playlist&id=843532521&title=&app_id=undefined"
+	    width="700" height="240">
+    </iframe>
+    <br>
+    <div id="buttons">
+      <div class="button1">
+	<a href="#prima">Résumé</a>
+      </div>
+      <div class="button1">
+	<a href="#antepenultima">L'équipe</a>
+      </div>
+      <div class="button1">
+	<a href="#penultima">Edition 2011</a>
+      </div>
+      <div class="button1">
+	<a href="#ultima">Edition 2010</a>
+      </div>
+    </div>
+    
+    <div id="content">
 
-L'esplanade des Unelles (2 000 places en plein air)
-Le square de l’Évêché (150 places couvertes, d'autres en plein air) ; elle sert habituellement de scène "Avis aux amateurs".
-Il existe aussi d'autres scènes pour les spectacles gratuits :
+      <section id="prima" class="event">
+	<h3>Introduction</h3>
+	<p>
+	  Le festival Jazz sous les pommiers a lieu tous les ans à Coutances (Manche). Il a été conçu à la suite d'une rencontre entre deux amateurs locaux, Thierry Giard, enseignant, et Gérard Houssin, animateur culturel. La première édition a eu lieu en 1982. Le festival se tient traditionnellement pendant la semaine de l'Ascension.
 
-La scène "Avis aux amateurs", square de l’Évêché où, des formations locales se produisent
-La cour de l'école Jules Verne (qui a remplacé la cour de l'école Germain)
-La cour de la chambre des métiers
-L'esplanade des Unelles
-La place Saint-Nicolas
-Invités[modifier | modifier le code]
-Liste non exhaustive
+La programmation très éclectique va du jazz « New Orleans » à la musique électronique. Elle inclut également de nombreux spectacles de rue. Les artistes invités sont aussi bien des musiciens locaux que de grandes vedettes internationales.
 
-2013 : Madeleine Peyroux, Charles Lloyd & Sangam, The Soul Rebels, Ravi Coltrane quintet, Nicolas Repac, Zé Louis, Stefano di Batista, Amari Famili, Joshua Redman Quartet, New Gary Burton quartet, Avishaï Cohen, Seun Kuti & Egypt 80, Anne Paceo, Gregory Porter (avec Jon Hendricks en guest), Winston McAnuff & Fixi et Richard Bona…
-2012 : Marcus Miller, Pink Martini, Hermeto Pascoal, Kurt Elling, Angélique Kidjo, Diego el Cigala…
-2011 : Chucho Valdés, Jacques Gamblin et Laurent de Wilde, Stéphane Belmondo, Youn Sun Nah, Eddy Louiss, Paolo Fresu, Aldo Romano, Gangbé Brass Band invite Aly Keïta, Dré Pallemaerts, Le Trio Rosenberg invite Sanseverino, Jamie Cullum, Ron Carter trio…
-2010 : Melody Gardot, John McLaughlin, Roy Hargrove quintet, Omar Sosa & Trilok Gurtu with Afreecanos, Generation Singleton "Gospels & Spirituals", Les Tambours du Burundi, Oreka Tx, Vincent Segal et ses amis, Joshua Redman / Brad Mehldau duo, Dhafer Youssef quartet Abu Nawas Rhapsody, Cheick Tidiane Seck invite Mamani Keita, Paolo Fresu et Uri Caine…
-2009 : Henri Texier, Andy Sheppard, La 33, Yael Naim, Craig Adams, Mamady Keita, Renata Rosa…
-2007 : Carla Bley, Tuck and Patti, Eliane Elias, Manu Katché, Liz Mc Comb, Abd Al Malik, John Surman, Dave Holland, Daniel Humair, Louis Sclavis, Benjamin Herman, Slang, Trygve Seim Ensemble, Emiko Minakuchi, Jean-Michel Pilc, Flavio Boltro, Daniel Yvinec, Top Dog Brass Band, Youngblood Brass Band, Faya dub, Acoustic Africa, Kočani Orkestar, UHT…
-2006 : Trio Beyond (Jack DeJohnette, John Scofield, Larry Goldings), Dianne Reeves, Dee Dee Bridgewater, Goran Bregović, Femi Kuti, Esbjörn Svensson Trio, The Bad Plus, Miguel Zenon, Enrico Rava, Enrico Pieranunzi, Avishaï Cohen, Bobby Mc Ferrin, New York Ska Jazz Ensemble, Dub Guerilla…
-2005 : Marcus Miller, Flavio Boltro, Gary Peacock, Henri Texier, Seu Jorge, Stacey Kent, John Taylor, David Murray, Stefano Di Battista…
-2004 : Chick Corea, Cassandra Wilson, Lucky Peterson, James Taylor, Michel Portal, Aldo Romano, Flavio Boltro, Bernard Lubat, Joey Baron, Richard Bona, Romane, The Skatalites, Rokia Traoré…
-2003 : Ahmad Jamal, Charlie Haden, Pat Metheny, Sylvain Kassap, Susheela Raman…
-2002 : Dave Holland, Joe Zawinul, Leon Redbone, Rhoda Scott, Biréli Lagrène, Louis Sclavis…
-2001 : Didier Lockwood, Melissa Walker, Popa Chubby, St Germain, Daniel Humair, David Murray, Abdullah Ibrahim, Les Tambours de Brazza, René Urtreger, Laurent de Wilde, Michel Camilo, Patricia Barber, Philip Catherine, Steve Lacy…
-2000 : Archie Shepp, Taj Mahal, Youssou N'Dour, Dee Dee Bridgewater, Jan Garbarek, Glenn Ferris, Jacky Terrasson, Alain Jean-Marie, Paco Sery, Richard Galliano, Sylvain Beuf…
-1999 : Max Roach, The Stars of Faith, John Surman, Daniel Humair, Erik Truffaz, Henri Texier, Andy Sheppard, Matasakumbo, Otis Grand…
-1998 : Pat Metheny, Jeanne Lee, Mal Waldron, Matt Guitar Murphy, Kenny Garrett, Aldo Romano, Leon Parker, Roy Hargrove…
-1997 : Lester Bowie, McCoy Tyner, Betty Carter, Compay Segundo, Roy Haynes, Steve Lacy, Koko Taylor, Laurent de Wilde, Keb Mo, Orchestre national de Barbès…
-1996 : Herbie Hancock, Ahmad Jamal, Phil Woods, Salif Keita, John Hammond, Maceo Parker, Dianne Reeves, John Scofield, Alain Jean-Marie, Boubacar Traoré…
-1995 : Sonny Rollins, Junior Wells, Beverly Jo Scott, Roy Hargrove, Bernard Lubat, Richard Galliano, Patrick Verbeke…
-1994 : Jean-Luc Ponty, Lucky Peterson, Hank Jones, Jon Hendricks, Ann Peebles, Claude Luter, Eddy Louiss, Michel Portal, Michel Legrand, Paquito D'Rivera, Henri Texier, Sixun…
-1993 : Buddy Guy, Cesária Évora, Abbey Lincoln, Johnny Griffin, Orchestre national de jazz, Biréli Lagrène, Roots, Judy Niemack, Paul Bley, Jimmy Giuffre…
-1992 : Dee Dee Bridgewater, John Mayall, Jan Garbarek, Aldo Romano, Zap Mama, Marc Perrone…
-1991 : Elvin Jones, Branford Marsalis, La Velle, Kenny Barron, Andy Sheppard, André Ceccarelli, Tuck and Patti, Johnny Heartsman, Carlos Actis Dato, Evidence, Arthur H…
-1990 : Curtis Mayfield, John Surman, Otis Grand, Orchestre national de jazz (ONJ), Richard Raux, Pantin Cruel, Amabutho, Camille, Danny Thompson, Orphy Robinson, Amina Claudine Myers…
-1989 : Michel Petrucciani, Dewey Redman, Martial Solal, Mike Westbrook, Willem Breuker, Chico Freeman, Andy Sheppard, Irakere, Ray Gelato…
-1988 : Gil Evans, Joe Henderson, George Russell, Louis Sclavis, The Mint Juleps, Richard Galliano, Billy Jenkins…
-1987 : McCoy Tyner, Steve Waring, Tony Scott, Alfredo Rofriguez, Courtney Pine Group, Karen Young, Patrice Caratini, Henri Texier…
-1986 : Eddy Louiss, Sixun, Arthur Blythe, Air Mail, Melody Four, Antoine Dessen…
-1985 : Michel Portal, Antoine Hervé, Jan Cees Tans, Kristen Noguès…
-1984 : Paul Bley, Marcia Maria, Georges Arvanitas, Henri Texier…
-1983 : Abbey Lincoln, Jimmy Gourley, Joachim Kühn, Steve Lacy, Cedar Waldron, Willem Breuker…
-1982 : Martial Solal, René Urtreger, Mike Westbrook, La Velle, Chris McGregor, Pantin Cruel…
-			</p>
-		</section>
-        <div class="clearer"></div>
-<div class="clearer"></div>
+En 2006, Jazz sous les pommiers totalisait plus de 1 000 concerts qui ont été suivis par 500 000 spectateurs, dont 350 000 payants. En 2010 le festival a connu un record de fréquentation avec 37 000 spectateurs. Le festival fête sa 30e édition en 2011, invitant des artistes qui sont déjà venus jouer au festival mais également des inédits à Coutances. Cet anniversaire s'est terminé avec la « Folle Parade », une déambulation de 2 h 30 dans le centre ville de Coutances le 4 juin.
+	</p>
+	
+	<img src="../images/jazz-presentation.jpg" alt=" presentation jazz">
+      </section>
+      <div class="clearer"></div>
+      <section id="antepenultima" class="event">	
+	  
+	<h3>"Staff"</h3>
+	 <p>
+L’équipe du festival
+Jazz sous les pommiers est le fruit d’un travail associant l’équipe permanente du Théâtre municipal de Coutances et une vingtaine de bénévoles. Ce comité d’organisation travaille à longueur d’année par le biais de réunions plénières ou de commissions spécialisées : programmation, promotion, bars, spectacles de rue etc … Tous les aspects du festival sont traités de cette manière et dans la plus grande démocratie. C’est un vrai collectif qui dessine chaque année le visage du festival.
+
+L’équipe des permanents du festival et du théâtre
+Stéphanie Davenel, Marie-Christine Delozier, Fabrice Fourneaux, Isabelle Hébert, Séverine Hédouin, Denis Le Bas, William Lecaplain, Corinne Leconte, Jean-Paul Lecoutour, Dominique Lépinasse, Gérard Marie, Julie Mesnil, Véronique Robine, Alain Tirel, Béatrice Touchais, Valérie Yhuello.
+
+Le comité de bénévoles
+Jean-Pierre Arnaud, Monika Arnaud, Yann Breuilly, Michel Caens, Gérard Collet, Jean-Philippe Coulombier, Jacques Drapier, Clara Horel, Josette Leduc, Monette Lepleux, Patrick Leroy, Michèle Mercier, Jean-Marie Robillard, Catherine Savary, Nadia Abadou-Dessolier, Benoît Groud, Guy Harel, Régis Mouchel, Michel Le Gal, Martin Daguerre, Alexia Gémin, Vincent Brieuc.
+	</p>
+	<img src="../images/beauregard-2012.jpg" alt="beauregard-2012">
+      </section>
+      
+      <div class="clearer"></div>
+      <section id="penultima" class="event">
+	<h3></h3>	
+	<p>
+
+	</p>
+	<img src="../images/beauregard-2011.jpg" alt="beauregard-2011">
+      </section>
+      <div class="clearer"></div>
+      <section id="ultima" class="event">
+	<h3>Edition 2010</h3>	
+	<p>
+
+	</p>	
+	<img  src="../images/beauregard-2010.jpg" alt="beauregard-2010">
+      </section>
+    </div>
+    <div class="clearer"></div>
+
     <footer>  <!-- pied de page-->
       <a href="mailto:dev.lecarpentier@hgmailcom">Jérémie Lecarpentier</a>
       <a href="mailto:antoinepincon1@gmail.com">Antoine Pinçon</a>
       <a href="http://www.unicaen.fr/">Université de Caen Basse-Normandie </a>
       <div class="clearer"></div>
     </footer>
-    </footer>
-        
+</footer>
+
     </body>
 </html>

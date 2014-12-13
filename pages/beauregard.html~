@@ -24,10 +24,12 @@
       </div>
       
     </header>
+    
+	
 	
     <aside id="infos">
       <h2>Beauregard</h2>
-      <img src="../images/beauregard-logo.png" alt="logo beauregard">
+      <img src="../images/beauregard-2015.png" alt="beauregard-2015">
       <h3>Dates</h3>
       <p>3, 4 et 5 Juillet 2015</p>
       <h3>Billeterie</h3>
@@ -45,9 +47,11 @@
 	Hérouville-Saint-Clair</p>
     </aside>
     
+    
+    
+    
     <iframe scrolling="no" frameborder="0" allowTransparency="true" src="http://www.deezer.com/plugins/player?autoplay=false&playlist=false&width=700&height=80&cover=true&type=playlist&id=922762005&title=&app_id=undefined" width="700" height="80"></iframe>
     <br>
-    
     <div id="buttons">
       <div class="button1">
 	<a href="#prima">Edition 2014</a>
@@ -89,6 +93,7 @@
 	</p>
 	  <img src="../images/beauregard-2009.jpg" alt="beauregard-2009">
       </section>
+      
       
       <div class="clearer"></div>
       <section id="prima" class="event">
