@@ -1,0 +1,31 @@
+    header {
+        background-color : #2db34a;
+    width :100%;
+    }
+    
+    nav a {
+        padding:5px;
+        text-decoration: none;
+        color:white;
+        font: 15px/45px Junction, sans-serif;
+        display: block;
+    }
+    
+    nav > ul {
+        padding: 0;
+        margin: 0;
+    }
+    
+    /*deuxieme niveau*/
+    nav > ul > li > ul {
+        background-color : #55cc55;
+	
+    }
+    
+    
+    #asideNav {
+        float:left;
+        background-color : #33aa33;
+    overflow : scroll;
+    }
+    

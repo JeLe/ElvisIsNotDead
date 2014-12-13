@@ -1,12 +1,8 @@
-
-
 /*le slider avec les images sur lesquelles on peut cliquer.*/
 
 /*ca c'est la grande image*/
 #slider{
     position: relative;
-    border:1px solid red;
-    width:100%;
     overflow : hidden;
 }
 
@@ -26,76 +22,29 @@
   transition: none !important;
 }
 
-/*
 
-#mainLink{
-    -webkit-transition: left .8s ease-in;
-    transition: left .8s ease-in;
-    
-    -webkit-transition: opacity .8s;
-    transition: opacity .8s;
-}
 
-#left{
-    -webkit-transition: left .8s;
-    transition: left .5s;
-    
-    -webkit-transition: opacity .5s;
-    transition: opacity .5s;
-}
+/*faire apparaitre les fleches lorsqu'on est au-dessus des images de droite ou de gauche */
+/*#left:hover ~ .ignore>.arrows, #right:hover ~ .ignore>.arrows, : ca ca ne marche pas et c'est bien domage !*/
 
-#mainLink:hover ~ .arrows, .arrows:hover{
+
+.arrows:hover{
     opacity: 1;
 }
-*/
+
 .arrows {
     opacity : 0;
     -webkit-transition: opacity .8s; /* For Safari */
     transition: opacity .8s;
 }
+/*position laterale des fleches*/
+.ignore > a:first-child{
+    left:0;
+}
 
-
-
+.ignore > a:last-child{
+    right:0;
+}
 /*le style des articles quand on clique sur une image*/
 
-article{
-display:none;
-}
-
-section {
-    width:40%;
-    margin: 2.5%;
-}
-
-section p{
-    text-align: justify;
-    padding-left: 5%;
-}
-
-
-.video{
-    float: left;
-    padding-left: 2.5%;
-}
-
-.text{
-    float: right;
-    padding-right: 2.5%;
-}
-
-
-.video2{
-    float: right;
-    padding-right:2.5%;
-}
-
-.text2{
-    float: left;
-    padding-left:6%;
-}
-
-iframe {
-    width:90%;
-    
-}
 

@@ -82,3 +82,114 @@ img.event{
     display: block;
 }
 
+
+/*******************************************/
+/*tout ce qui suit vient de commun.css, mais n'est pas commun avec l'accueil, alors je l'ai mis ici.*/
+/*tu as donc plusieurs choses a regarder : y a til des trucs en double entre au dessus et en dessous de ces commentaires ?*/
+/*fais attention pour les images, elles sont déformées... Alors il ne faut leur donner soit que un height, soit que un width, mais pas les deux...*/
+
+
+/*La c'est pour la div ou on parle des evenements*/
+
+#content{
+    margin: 1%;
+    width: 75%;
+    height: 540px;
+    overflow: auto;
+}
+
+#content>.event{
+    margin-left: 4%;
+}
+
+#content>.event>p{
+    text-align: justify;
+}
+
+#content>#ultima{
+    margin-bottom: 30%;
+}
+
+/*et ici c'est pour les sections de la sus-nommee div*/
+
+.event{
+    float: left;
+    margin-top: 5%;
+    width: 80%;
+}
+.event>img{
+    width: 450px;
+    height: 350px; 
+    margin-left: auto;
+    margin-right: auto; 
+    display: block; 
+}
+
+
+
+/*boutons des pages evenements*/
+
+#buttons{
+    margin: 0 0 0 16%;
+}
+
+.button1 a {
+    text-align: center;
+    display: block;
+    height: 45px;
+    color: white;
+    font: 17px/50px Junction, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.button1 {
+    width: 10%;
+    margin: 1% 1.5% 1% 1.5%;
+    background: #00b7ea;
+    border-radius: 2px;
+    display: inline-block; /* pour qu'ils soient sur la meme ligne*/
+}
+
+
+/*test*/
+
+/*mise en place du iframe*/
+iframe {
+    height: 80px;
+    width: 50%;
+    margin: 1% 0 0 13%;
+}
+
+/*ça c'est pour le aside*/
+#infos{
+    float: right;
+    width: 15%;
+    margin: 2%;
+    background-color: #A74;
+}
+
+
+#infos>h2,h3,p{
+    margin: 3% 0 3% 0 ;
+    text-align: center;
+}
+
+#infos>img{
+    width: 50%;
+    margin-left: auto; /*pour que les images soient*/ 
+    margin-right: auto; /* automatiquement centrées*/
+    display: block; 
+
+}
+
+#infos>a{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+
+
