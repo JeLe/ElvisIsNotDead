@@ -1,0 +1,62 @@
+
+    
+    /*Les elements de style propre au haut de page*/
+    header{
+        width : 100%;
+    }
+    
+    #homeTitle {
+        float:left;
+        width : 35%;
+    }
+    nav {
+        float : right;
+        width:60%;
+    }
+    
+    nav ul {
+        padding: 0;
+        margin: 0;
+        z-index: 1;
+    }
+    
+    /*qui rendent le menu deroulant...*/
+    
+    
+    /*premier niveau*/
+    nav > ul > li {
+        float:left;
+        /*width:33%;*/
+        border-left:1px solid white;
+        position:relative;
+    }
+    
+    /*deuxieme niveau*/
+    nav > ul > li > ul {
+        display: none;
+        position:absolute;
+        width:100%; /*comme ca les sous menus font la meme taille que le parent ;)*/
+    }
+    
+    /*et comme on sait sur quel truc on va cliquer.*/
+    nav > ul > li:hover {
+        background: #2db34a;
+    }
+    
+    
+    /*dans les sous menus aussi !*/
+    
+    nav > ul > li > ul > li:hover {
+        background: #2db34a;
+    }
+    
+    /*rendre visible le sous menu*/
+    nav > ul > li:hover ul {
+        display :block;
+    }
+    
+    /* et quelques couleurs en plus pour finir */
+    nav > ul > li > ul > li {
+        background: red;
+    }
+    

@@ -1,0 +1,54 @@
+/*le slider avec les images sur lesquelles on peut cliquer.*/
+
+
+
+/*ca c'est la grande image*/
+#slider{
+    margin : 2px 0;
+    width:100%;
+}
+
+
+/*et les articles*/
+
+article{
+display:none;
+overflow : scroll;
+}
+
+section {
+    width:40%;
+    margin: 2.5%;
+}
+
+section p{
+    text-align: justify;
+    padding-left: 5%;
+}
+
+
+.video{
+    float: left;
+    padding-left: 2.5%;
+}
+
+.text{
+    float: right;
+    padding-right: 2.5%;
+}
+
+
+.video2{
+    float: right;
+    padding-right:2.5%;
+}
+
+.text2{
+    float: left;
+    padding-left:6%;
+}
+
+iframe {
+    width:90%;
+    
+}

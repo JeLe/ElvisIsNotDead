@@ -2,8 +2,16 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" href="../style/commun.css"/>
-    <link rel="stylesheet" href="../style/accueil.css"/>
+    
+    <link rel="stylesheet" href="../style/commun.css" media="all">
+    <link rel="stylesheet" href="../style/accueil.css" media="all">
+    
+    <link rel="stylesheet" href="../style/commun-small.css" media="(max-width: 960px) and (max-height: 540px) and (orientation: landscape)">
+    <link rel="stylesheet" href="../style/accueil-small.css" media="(max-width: 960px) and (max-height: 540px) and (orientation: landscape)">
+        
+        
+    <link rel="stylesheet" href="../style/commun-big.css" media="(min-width: 960px) and (min-height: 540px) and (orientation: landscape)">
+    <link rel="stylesheet" href="../style/accueil-big.css" media="(min-width: 960px) and (min-height: 540px) and (orientation: landscape)">
     <!-- ne pas oublier les métadonnées-->
     <!-- et qu'est-ce qu'on fait ? on les oublie !-->
     <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
@@ -36,26 +44,28 @@
     <div id="slider">
 
       
-      <a href="#" id="left"> <img src="../images/cinema.jpg" alt="cinema"> </a>
+      <a href="#cine" > <img src="../images/cinema.jpg" alt="cinema"> </a>
       <!--<div class="tooltip"> <h1>horses</h1> </div>-->
       
       
-      <a href="#" id="mainLink"> <img id="mainImage" src="../images/musique.jpg" alt="une image"></a>
+      <a href="#music" id="mainLink"> <img id="mainImage" src="../images/musique.jpg" alt="une image"></a>
       
-      <a href="#" id="right"><img src="../images/tradition.jpg" alt="tradition"></a>
+      <a href="#trad" ><img src="../images/tradition.jpg" alt="tradition"></a>
       <!-- <div class="tooltip"> <h1>and sheep ;)</h1> </div>-->
       
       
-      <a href="#"  class="arrows"><img src="../images/previous-arrow.png" alt="back"></a>
+      <div class="ignore">
+      <a href="#"  class="arrows" id="testId"><img src="../images/arrow-left.png" alt="back"></a>
+      
+      <a href="#" class="arrows" id="testId2"><img src="../images/arrow-right.png" alt="forth"></a>
+      </div>
+
 
 
 
 
     </div>
     
-    <a href="#"  class="arrows"><img src="../images/previous-arrow.png" alt="back"></a>
-    
-    <a href="#" class="arrows"><img src="../images/next-arrow.png" alt="forth"></a>
     
     <!--attention, j'ai enlevé les liens des iframes pour que ca charge plus vite !!!-->
     <article id="music" >
@@ -78,13 +88,8 @@
 	<div class="clearer"></div>
       </section>
     </article>
-    
-    <div class="clearer"></div>
-    
-    
-    
-    
-    
+ 
+ 
     <article id="cine">
       
       <section class="video2"><iframe width="640" height="480" src="#"></iframe>
@@ -102,12 +107,7 @@
       
     </article>
     
-    <div class="clearer"></div>
-    
-    
-    
-    
-    
+
     
     <article id= "trad">
       
@@ -132,12 +132,16 @@
     </article>
     
     
-    <div class="clearer"></div>
+
+    
+    
+    
+    <div class="clearer" id="beforeFooter"></div>
     <footer>  <!-- pied de page-->
       <a href="mailto:dev.lecarpentier@hgmailcom">Jérémie Lecarpentier</a>
       <a href="mailto:antoinepincon1@gmail.com">Antoine Pinçon</a>
       <a id="UCBN" href="http://www.unicaen.fr/">Université de Caen Basse-Normandie </a>
-      <a href="#">A Propos</a>
+      <a href="#" id="youopi">A Propos</a>
       <div class="clearer"></div>
     </footer>
     
