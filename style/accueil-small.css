@@ -1,13 +1,11 @@
-#slider{
-float:right;
-}
+
 
 
 
 article{
 display:none;
 overflow : scroll;
-float: right;
+
 }
 
 
@@ -26,6 +24,18 @@ article [class*="video"] {
     display : none;
 }
 
+@media(orientation: landscape){
+
+article{
+float: right;
+}
+
+#slider{
+float:right;
+}
+
+
+}
 
 
 

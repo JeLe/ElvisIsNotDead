@@ -35,16 +35,13 @@ header{
     
 }
 
-header img{
-    height:100%;
-}
+
 
 
 a[title=home] img {
     position : absolute;
     left: 0;
-    top: 0;
-    width: 65px;
+    height : 80%;
 }
 
 /*menu du haut*/
@@ -107,5 +104,14 @@ footer {
     clear:both;
     margin:0;
     padding:0;
+}
+
+
+@media (orientation: portrait){
+a[title=home] img {
+display: none;
+}
+
+
 }
 

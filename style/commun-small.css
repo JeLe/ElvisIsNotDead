@@ -24,8 +24,36 @@
     
     
     #asideNav {
-        float:left;
+
         background-color : #33aa33;
     overflow : scroll;
     }
     
+@media(orientation: landscape){
+
+
+ #asideNav {
+        float:left;
+}
+
+
+
+}
+
+@media(orientation: portrait){
+
+
+ #asideNav {
+
+
+    display:none;
+
+}
+
+
+footer {
+overflow : hidden;
+}
+
+
+}

@@ -10,7 +10,15 @@ window.onload = load;
 function load(){
     header(); //on fabrique le header
     setStyle(); //on mets les divers styles en place
-    window.onresize = setStyle; //ce qu'on refera si jamais la taille de la fenetre change
+    window.onresize = function(){
+        if (window.innerHeight < window.innerWidth && window.innerWidth/window.innerHeight < 1.8)setStyle();
+        else if (window.innerHeight > window.innerWidth) setStyle();
+    };
+   
+    
+    
+    
+    //window.onresize = setStyle; //ce qu'on refera si jamais la taille de la fenetre change
     
     //et finalement on appelle la fonction qui aurait été appellée onload dans le script particulier de chaque page.
     main();
@@ -28,21 +36,15 @@ function load(){
 
 function setStyle(){
     var landscape = window.innerHeight < window.innerWidth;
-    //var portrait = !landscape; Pour l'instant, rien ne marche en mode portrait...
-    
+    //document.anchors[0].addRemoveListener("click", function(document.getElementById("asideNav").style.display = "block"));
     
     //cela correspond à nos &media queries
-    if (window.innerHeight > 540 && window.innerWidth > 960 && landscape) {
+    if (window.innerWidth > 960) {
         //on commence par vérifier que le nav est a la bonne place.
         if (document.getElementsByTagName("nav")[0].parentNode == document.getElementById("asideNav")) {
             moveNavToHeader();
         }
-        
-        //taille du header et du footer et des textes a l'interieur...
-        $("header a").css("font", window.innerHeight*0.07/3+"px/"+window.innerHeight*0.07+"px Junction, sans-serif");
-        $("footer a").css("font", window.innerHeight*0.07/3+"px/"+window.innerHeight*0.07+"px Junction, sans-serif");
-        document.getElementsByTagName("header")[0].style.height = window.innerHeight*0.08+"px";
-        document.getElementsByTagName("footer")[0].style.height = window.innerHeight*0.08+"px";
+
     
         //un peu de style pour le menu deroulant automatique :
         var li = document.getElementsByTagName("ul")[0].getElementsByTagName("li");
@@ -52,8 +54,31 @@ function setStyle(){
             }
         }
     
+        
+        if (landscape){
+            //taille du header et du footer et des textes a l'interieur...
+            document.getElementsByTagName("header")[0].style.height = window.innerHeight*0.08+"px";
+            document.getElementsByTagName("footer")[0].style.height = window.innerHeight*0.08+"px";
+            $("header a").css("font", window.innerHeight*0.07/3+"px/"+window.innerHeight*0.07+"px Junction, sans-serif");
+            $("footer a").css("font", window.innerHeight*0.07/3+"px/"+window.innerHeight*0.07+"px Junction, sans-serif");
+
+
+        }
+        else{
+            document.getElementsByTagName("header")[0].style.height = window.innerWidth*0.08+"px";
+            document.getElementsByTagName("footer")[0].style.height = window.innerWidth*0.08+"px";
+            $("header a").css("font", window.innerWidth*0.07/3+"px/"+window.innerWidth*0.07+"px Junction, sans-serif");
+            $("footer a").css("font", window.innerWidth*0.07/3+"px/"+window.innerWidth*0.07+"px Junction, sans-serif");
+
+
+        }
     }
-    else if(landscape){
+    
+
+    
+    
+    else {
+
         //wierd cases : height not big enough
         //portrait...
         //en gros quand en grand il est pas assez haut et en petit qu'il l'est trop...
@@ -63,6 +88,7 @@ function setStyle(){
         if (document.getElementById("asideNav") == null) {
             moveNavToAside();
         }
+        
 
         //les polices sont d'un plus grand ratio par rapport a la taille de la page
         $("header a").css("font", window.innerHeight*0.09/3+"px/"+window.innerHeight*0.09+"px Junction, sans-serif");
@@ -76,20 +102,22 @@ function setStyle(){
         document.getElementsByTagName("header")[0].style.height = window.innerHeight*0.1+"px";
         document.getElementsByTagName("footer")[0].style.height = window.innerHeight*0.1+"px";
         
-
-     document.getElementsByTagName("aside")[0].style.height = window.innerHeight*0.8-18+"px"; //ca c'est le menu
-        if (document.getElementById("alles") != null) {
+      
+        document.getElementsByTagName("aside")[0].style.height = window.innerHeight*0.8-18+"px"; //ca c'est le menu
+       
+            //ca c'est pour le contenu principal de toutes les pages sauf de l'accueil...
+            /*if (document.getElementById("alles") != null) {
             
             //ca c'est pour toutes les pages sauf l'accueil, il faut le finir
             document.getElementById("alles").style.width = window.innerWidth-document.getElementsByTagName("aside")[0].offsetWidth-20+"px";
             document.getElementById("alles").style.height = window.innerHeight*0.8-20+"px";
             document.getElementById("alles").style.overflow = "scroll";
             
+             }*/
+
+        if(!landscape){
+           // document.anchors[0].addEventListener("click", function(document.getElementById("asideNav").style.display = "block"));
         }
-
-
-
-        
         
     }
     

@@ -1,7 +1,10 @@
 
 function main(){
     setSizes(true);
-    window.onresize = setSizes;
+    window.onresize = function(){
+        if (window.innerHeight < window.innerWidth && window.innerWidth/window.innerHeight < 1.8)setSizes();
+        else if (window.innerHeight > window.innerWidth) setSizes();
+    };
 
 
     mySlider = new Slider(document.getElementById("slider"), document.getElementById("mainImage").clientWidth);
@@ -25,15 +28,15 @@ function main(){
 
 
 function setSizes(){
-    // la dedans sur le style du reste... car il est commun
-    setStyle();
+
 
     var landscape = window.innerHeight < window.innerWidth;
 
     // ici on va agir sur le style du slider
-
     
-    if (window.innerHeight > 540 && window.innerWidth > 960 && landscape) {
+    if (window.innerWidth > 960) {
+        
+        if (landscape){
         // on met les articles a la bonne hauteur pour quand ils seront ouverts.
         $("article").css("height", window.innerHeight*0.8+"px");
         
@@ -48,10 +51,30 @@ function setSizes(){
         document.getElementById("slider").style.top = "0";
         
 
+        }
+    
+        else {
+
+    
+        
+        
+        // et on met l'image principale à la bonne hauteur
+        //beaucoup de choses sont calculées en fonction de la taille de celle ci, mais grace a son id, on peut la mettre a la bonne taille inependament du reste...
+        document.getElementById("mainImage").style.width = window.innerWidth-100+"px";
+        document.getElementById("mainImage").style.height = "auto";
+        
+        //la hauteur de mon element slider entre autres
+        document.getElementById("slider").style.height = document.getElementById("mainImage").clientHeight+"px";
+        document.getElementById("slider").style.top = "0";
+            $("article").css("height", document.getElementById("slider").clientHeight+"px");
+
+
+        }
+        
     }
     
-    else if(landscape){
-
+    else {
+        if (landscape) {
         document.getElementById("slider").style.width = window.innerWidth-document.getElementsByTagName("aside")[0].offsetWidth-20+"px"; //car il y a normalement 16px total de marge sur le body
 
 
@@ -61,10 +84,27 @@ function setSizes(){
         document.getElementById("slider").style.top = (window.innerHeight-document.getElementsByTagName("header")[0].offsetHeight*2-document.getElementById("slider").clientHeight-20)/2+"px"; //on centre approximativement le slider..
         
         // et le style des articles si jamais on clique dessus..
-        $("article").css("height", window.innerHeight*0.8-20+"px");
+        $("article").css("height", document.getElementById("slider").clientHeight+"px");
         $("article").css("width", document.getElementById("slider").clientWidth+"px");
         
-    
+        }
+        
+        
+        else {
+
+            // et on met l'image principale à la bonne hauteur
+            //beaucoup de choses sont calculées en fonction de la taille de celle ci, mais grace a son id, on peut la mettre a la bonne taille inependament du reste...
+            document.getElementById("mainImage").style.width = window.innerWidth-50+"px";
+            document.getElementById("mainImage").style.height = "auto";
+            
+            //la hauteur de mon element slider entre autres
+            document.getElementById("slider").style.height = document.getElementById("mainImage").clientHeight+"px";
+            document.getElementById("slider").style.top = "0";
+            $("article").css("height", window.innerHeight*.7+"px");
+
+
+            
+        }
     }
     
     
