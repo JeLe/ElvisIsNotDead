@@ -84,6 +84,7 @@ function setStyle(){
             document.getElementById("alles").style.width = window.innerWidth-document.getElementsByTagName("aside")[0].offsetWidth-20+"px";
             document.getElementById("alles").style.height = window.innerHeight*0.8-20+"px";
             document.getElementById("alles").style.overflow = "scroll";
+            
         }
 
 
