@@ -29,7 +29,7 @@ p {
 
 
 header{
-    background-color: #33cc33;
+    background-color: #aaa;
     font-family: Flex, sans-serif;
     position: relative;
     
@@ -95,7 +95,7 @@ footer a  {
 
 
 footer {
-    background-color: #ffcc00;
+    background-color: #1c1c1c;
     width: 100%;
     
 }

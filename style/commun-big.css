@@ -40,14 +40,14 @@
     
     /*et comme on sait sur quel truc on va cliquer.*/
     nav > ul > li:hover {
-        background: #2db34a;
+        background: #949494;
     }
     
     
     /*dans les sous menus aussi !*/
     
     nav > ul > li > ul > li:hover {
-        background: #2db34a;
+        background: #acacac;
     }
     
     /*rendre visible le sous menu*/
@@ -57,6 +57,6 @@
     
     /* et quelques couleurs en plus pour finir */
     nav > ul > li > ul > li {
-        background: red;
+        background: #757575;
     }
     

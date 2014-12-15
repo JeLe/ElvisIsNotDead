@@ -15,3 +15,58 @@ function load(){
 }
 
     
+function main(){
+    newSetSizes();
+    window.onresize = newSetSizes;
+    
+
+}
+
+function newSetSizes(){
+    setStyle();
+    
+    
+    var landscape = window.innerHeight < window.innerWidth;
+
+    
+    if (window.innerWidth > 960) {
+        
+        if (landscape){
+            
+            document.getElementById("slider").style.height = window.innerHeight*0.8+"px";
+            
+            
+        }
+        
+        else {
+            
+            document.getElementById("slider").style.height = window.innerHeight*0.7+"px";
+            
+            
+        }
+        
+    }
+    
+    else {
+        if (landscape) {
+            
+            document.getElementById("alles").style.height = window.innerHeight*.6+"px";
+            
+        }
+        
+        
+        else {
+            
+            document.getElementById("alles").style.height = window.innerHeight*.7+"px";
+            
+        }
+    }
+    
+    
+
+    
+}
+
+
+
+}
