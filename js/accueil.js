@@ -1,10 +1,15 @@
 
 function main(){
     setSizes(true);
+    
+    
+/*    var doit;
     window.onresize = function(){
-        if (window.innerHeight < window.innerWidth && window.innerWidth/window.innerHeight < 1.8)setSizes();
-        else if (window.innerHeight > window.innerWidth) setSizes();
-    };
+        clearTimeout(doit);
+        doit = setTimeout(setSizes, 100);
+    };*/
+    window.onresize = setSizes;
+
 
 
     mySlider = new Slider(document.getElementById("slider"), document.getElementById("mainImage").clientWidth);
@@ -28,7 +33,7 @@ function main(){
 
 
 function setSizes(){
-
+    setStyle();
 
     var landscape = window.innerHeight < window.innerWidth;
 
@@ -75,16 +80,14 @@ function setSizes(){
     
     else {
         if (landscape) {
-        document.getElementById("slider").style.width = window.innerWidth-document.getElementsByTagName("aside")[0].offsetWidth-20+"px"; //car il y a normalement 16px total de marge sur le body
-
-
+       
         document.getElementById("slider").style.height = window.innerHeight*.6+"px";         document.getElementById("mainImage").style.height = document.getElementById("slider").clientHeight+"px";
         document.getElementById("mainImage").style.width = "auto";
         
         document.getElementById("slider").style.top = (window.innerHeight-document.getElementsByTagName("header")[0].offsetHeight*2-document.getElementById("slider").clientHeight-20)/2+"px"; //on centre approximativement le slider..
         
         // et le style des articles si jamais on clique dessus..
-        $("article").css("height", document.getElementById("slider").clientHeight+"px");
+        $("article").css("height", window.innerHeight*.7+"px");
         $("article").css("width", document.getElementById("slider").clientWidth+"px");
         
         }
@@ -101,7 +104,7 @@ function setSizes(){
             document.getElementById("slider").style.height = document.getElementById("mainImage").clientHeight+"px";
             document.getElementById("slider").style.top = "0";
             $("article").css("height", window.innerHeight*.7+"px");
-
+       //document.getElementById("slider").style.width = window.innerWidth-16+"px"; //car il y a normalement 16px total de marge sur le body
 
             
         }
@@ -127,8 +130,6 @@ function setSizes(){
     rightArrow.style.height = (window.innerHeight*0.8)/5+"px";
     rightArrow.parentNode.style.top = (document.getElementById("slider").clientHeight-rightArrow.clientHeight)/2+"px";
     
-
-    
 }
 
 function Slider(){
@@ -150,7 +151,7 @@ function Slider(){
     this.exception = false;
     
     this.calcPos = function(){
-        console.log(this);
+
         //on fait les calculs en fonction de la largeur de de l'élement container et de la largeur d'un element
         this.pos1 = (this.DOMElement.clientWidth - this.elementWidth)/2 +"px";
         this.pos2 = parseInt(this.pos1)+ this.elementWidth +"px";
@@ -222,7 +223,9 @@ function Slider(){
         }
         
         // et plein de modulos pour revenir au debut au aller a la fin du array
+        if (this.elements[(this.index-1)%modulo] != null)
         this.elements[(this.index-1)%modulo].style.left = this.bufferPosLeft;
+        else console.log ("BUG !!!");
         
         this.elements[this.index%modulo].style.opacity = ".6";
         this.elements[this.index%modulo].style.left = this.pos0;
@@ -288,7 +291,7 @@ function goToPrevious(){
 
 
 function goToSlide(){
-    console.log(this.getAttribute("href").slice(1));
+
     clearInterval(sliderChange);
     document.getElementById("slider").style.display = "none";
     document.getElementById(this.getAttribute("href").slice(1)).style.display = "block";

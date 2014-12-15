@@ -28,15 +28,27 @@ article [class*="video"] {
 
 article{
 float: right;
+width: 67%;
 }
 
 #slider{
 float:right;
+width: 69%;
+
 }
 
 
 }
+@media(orientation: portrait){
 
+
+
+#slider{
+width: 100%;
+}
+
+
+}
 
 
 /*a nice gray is the #aaa*/

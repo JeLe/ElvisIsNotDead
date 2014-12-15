@@ -8,17 +8,14 @@ window.onload = load;
 
 
 function load(){
+    oldWidth = -1;
     header(); //on fabrique le header
-    setStyle(); //on mets les divers styles en place
-    window.onresize = function(){
-        if (window.innerHeight < window.innerWidth && window.innerWidth/window.innerHeight < 1.8)setStyle();
-        else if (window.innerHeight > window.innerWidth) setStyle();
-    };
-   
+    setStyle(true); //on mets les divers styles en place
+    
+ // do this only if there is no other onresize in the other scripts...
+ //   window.onresize = setStyle;
     
     
-    
-    //window.onresize = setStyle; //ce qu'on refera si jamais la taille de la fenetre change
     
     //et finalement on appelle la fonction qui aurait été appellée onload dans le script particulier de chaque page.
     main();
@@ -35,15 +32,27 @@ function load(){
 
 
 function setStyle(){
+
     var landscape = window.innerHeight < window.innerWidth;
-    //document.anchors[0].addRemoveListener("click", function(document.getElementById("asideNav").style.display = "block"));
+    console.log(oldWidth);
+    if (oldWidth != -1){
+        if (oldWidth > 960 && window.innerWidth <= 960) moveNavToAside();
+        else if(oldWidth <= 960 && window.innerWidth > 960) moveNavToHeader();
+    
+        console.log(document.getElementById("asideNav"));
+    }
+    else{
+        if (window.innerWidth <= 960) moveNavToAside();
+    }
     
     //cela correspond à nos &media queries
     if (window.innerWidth > 960) {
         //on commence par vérifier que le nav est a la bonne place.
-        if (document.getElementsByTagName("nav")[0].parentNode == document.getElementById("asideNav")) {
+        
+
+      /*  if (document.getElementsByTagName("nav")[0].parentNode == document.getElementById("asideNav")) {
             moveNavToHeader();
-        }
+        }*/
 
     
         //un peu de style pour le menu deroulant automatique :
@@ -61,7 +70,7 @@ function setStyle(){
             document.getElementsByTagName("footer")[0].style.height = window.innerHeight*0.08+"px";
             $("header a").css("font", window.innerHeight*0.07/3+"px/"+window.innerHeight*0.07+"px Junction, sans-serif");
             $("footer a").css("font", window.innerHeight*0.07/3+"px/"+window.innerHeight*0.07+"px Junction, sans-serif");
-
+            console.log("big landscape");
 
         }
         else{
@@ -69,6 +78,7 @@ function setStyle(){
             document.getElementsByTagName("footer")[0].style.height = window.innerWidth*0.08+"px";
             $("header a").css("font", window.innerWidth*0.07/3+"px/"+window.innerWidth*0.07+"px Junction, sans-serif");
             $("footer a").css("font", window.innerWidth*0.07/3+"px/"+window.innerWidth*0.07+"px Junction, sans-serif");
+            console.log("big portrait");
 
 
         }
@@ -85,16 +95,18 @@ function setStyle(){
         
         //mobile version
         // et du coup le menu déroulant va sur le coté :)
+        /*console.log(document.getElementById("asideNav"));
         if (document.getElementById("asideNav") == null) {
             moveNavToAside();
-        }
+            console.log("ici");
+        }*/
         
-
+        if(landscape){
         //les polices sont d'un plus grand ratio par rapport a la taille de la page
         $("header a").css("font", window.innerHeight*0.09/3+"px/"+window.innerHeight*0.09+"px Junction, sans-serif");
         $("footer a").css("font", window.innerHeight*0.09/3+"px/"+window.innerHeight*0.09+"px Junction, sans-serif");
         
-        //ca il va falloir le faire en fonction du nombre de trucs dans le menu
+
         $("nav a").css("font", window.innerHeight*0.09/3+"px/"+window.innerHeight*0.09+"px Junction, sans-serif");
         $("nav li").css("width", "100%");
 
@@ -102,10 +114,34 @@ function setStyle(){
         document.getElementsByTagName("header")[0].style.height = window.innerHeight*0.1+"px";
         document.getElementsByTagName("footer")[0].style.height = window.innerHeight*0.1+"px";
         
-      
+
         document.getElementsByTagName("aside")[0].style.height = window.innerHeight*0.8-18+"px"; //ca c'est le menu
+            
+            console.log("small landscape");
+
        
-            //ca c'est pour le contenu principal de toutes les pages sauf de l'accueil...
+        }
+        else {
+            console.log("where the hell am I ??");
+            //ici le menu est caché...
+            $("header a").css("font", window.innerWidth*0.09/3+"px/"+window.innerWidth*0.09+"px Junction, sans-serif");
+            $("footer a").css("font", window.innerWidth*0.09/3+"px/"+window.innerWidth*0.09+"px Junction, sans-serif");
+            
+
+            $("nav a").css("font", window.innerWidth*0.09/3+"px/"+window.innerWidth*0.09+"px Junction, sans-serif");
+            $("nav li").css("width", "100%");
+            
+            //header et footer height = 10% de la page chacun
+            document.getElementsByTagName("header")[0].style.height = window.innerWidth*0.1+"px";
+            document.getElementsByTagName("footer")[0].style.height = window.innerWidth*0.1+"px";
+            
+            //if (setStyle.arguments[0]!= true) location.reload();
+        
+        }
+        
+        
+        
+        //ca c'est pour le contenu principal de toutes les pages sauf de l'accueil...
             /*if (document.getElementById("alles") != null) {
             
             //ca c'est pour toutes les pages sauf l'accueil, il faut le finir
@@ -115,9 +151,6 @@ function setStyle(){
             
              }*/
 
-        if(!landscape){
-           // document.anchors[0].addEventListener("click", function(document.getElementById("asideNav").style.display = "block"));
-        }
         
     }
     
@@ -126,7 +159,12 @@ function setStyle(){
     if (document.getElementById("UCBN").scrollHeight >  document.getElementsByTagName("footer")[0].clientHeight) {
         document.getElementById("UCBN").innerHTML = "UCBN";
     }
+    
+     //this is a cheap fix for the couple of bugs we have when switching from one layout to another...
+    oldWidth = window.innerWidth;
 
+
+    
 }
 
 
