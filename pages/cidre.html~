@@ -43,7 +43,6 @@
       <h3>Lieu</h3>
       <p>Merville-Franceville</p>
     </aside>
-    <img src="../images/cidre-banner.jpg" alt="banniere cidre" id="banner">
     
     <div id="buttons">
       <div class="button1">
@@ -59,9 +58,9 @@
 	<a href="#ultima">Courants</a>
       </div>
     </div>
-    
+    <img src="../images/cidre-banner.jpg" alt="banniere cidre" id="banner">
     <div id="content">
-      
+
       <section id="prima" class="event">
 	<h3>La Fantasy</h3>
 	<p>
