@@ -2,11 +2,19 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" href="../style/commun.css"/>   <!-- feuille de style à déclarer -->
-    <link rel="stylesheet" href="../style/commun2.css"/>   <!-- feuille de style à déclarer -->
-    <!--attention, j'ai ecrit culutre..-->
-    <!-- ne pas oublier les métadonnées-->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="../style/commun-event.css" media="all">
+    
+    <link rel="stylesheet" href="../style/commun.css" media="all">
+    
+    <link rel="stylesheet" href="../style/commun-small.css" media="(max-width: 960px)">
+    
+    <link rel="stylesheet" href="../style/commun-big.css" media="(min-width: 960px)">
+    
+    
+    <script src="../js/beauregard.js"></script>
+    
+    <script src="../js/jquery.js"></script>
     
     <script src="../js/commun.js"></script>
     
@@ -22,7 +30,7 @@
     
     <aside id="infos">
       <h2>Cidre & Dragons</h2>
-      <img src="../images/cidre.jpg" alt="logo-cidre">
+      <img src="../images/cidre-logo.jpg" alt="logo-cidre">
       <h3>Dates</h3>
       <p>20 et 21 Septembre 2014</p>
       <h3>Billeterie</h3>
@@ -50,10 +58,9 @@
 	<a href="#ultima">Courants</a>
       </div>
     </div>
-    
+    <img src="../images/cidre-banner.jpg" alt="banniere cidre" id="banner">
     <div id="content">
-      
-      <div class="clearer"></div>
+
       <section id="prima" class="event">
 	<h3>La Fantasy</h3>
 	<p>
@@ -66,7 +73,7 @@
 	  Là où il y a des héros, il faut des antagonistes, et dans les mondes de la Fantasy, ils ne sont pas toujours humains. Les monstres sont les plus souvent opposés à l’humanité et ses alliés, mais il arrive qu’ils ne cherchent qu’à vivre tranquillement et doivent se défendre contre une humanité agressive. Certains monstres ne le sont également que du point de vue qui leur est porté par l’auteur, comme les gobelins, petites créatures agressives dans « Le Seigneur des Anneaux » et banquiers compétents dans « Harry Potter ».
 	</p>	
 	
-	<img  src="../images/cidre-fantasy.jpg" alt="fantasy">
+	<img src="../images/cidre-fantasy.jpg" alt="fantasy">
       </section>
       <div class="clearer"></div>
       <section id="antepenultima" class="event">	
@@ -97,7 +104,7 @@
 	  La couleur violette
 	  Cette couleur qui n’est ni lié aux Venguins, ni au Brasiards, ni aux Brumeux, a été arborée à plusieurs reprises par des entités ayant pour but de détruire les mondes de la fantasy. Cette couleur est donc réputée maudite, et la porter attire souvent le malheur et le mauvais œil sur soi…
 	</p>
-	<img  src="../images/cidre-univers.jpg" alt="univers">
+	<img src="../images/cidre-univers.jpg" alt="univers">
       </section>
       <div class="clearer"></div>
       <section id="ultima" class="event">
@@ -115,9 +122,9 @@
 	<img src="../images/cidre-courant.jpg" alt="courant">
       </section>
     </div>
-
-
-
+    
+    
+    
     <div class="clearer"></div>
     <footer>  <!-- pied de page-->
       <a href="mailto:dev.lecarpentier@hgmailcom">Jérémie Lecarpentier</a>

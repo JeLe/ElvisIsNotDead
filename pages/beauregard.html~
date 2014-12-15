@@ -2,12 +2,19 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8"/>
+	
+	<link rel="stylesheet" href="../style/commun-event.css" media="all">
 
-    <link rel="stylesheet" href="../style/commun.css"/>   <!-- feuille de style à déclarer -->
+    <link rel="stylesheet" href="../style/commun.css" media="all">
+    
+    <link rel="stylesheet" href="../style/commun-small.css" media="(max-width: 960px)">
+        
+    <link rel="stylesheet" href="../style/commun-big.css" media="(min-width: 960px)">
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     
     <script src="../js/beauregard.js"></script>
+	
+	<script src="../js/jquery.js"></script>
 
     <script src="../js/commun.js"></script>
    
@@ -24,16 +31,19 @@
       </div>
       
     </header>
+
+
     
-	
+	<div id="alles"> <!--comme "eins, zwei, drei, alles !"-->
+
 	
     <aside id="infos">
       <h2>Beauregard</h2>
-      <img src="../images/beauregard-2015.png" alt="beauregard-2015">
+      <img src="../images/beauregard-logo.png" alt="logo beauregard">
       <h3>Dates</h3>
       <p>3, 4 et 5 Juillet 2015</p>
       <h3>Billeterie</h3>
-      <p>Fnac Spectacles</p><br>
+      <p>Fnac Spectacles</p>
       <p><a href="http://www.festivalbeauregard.com/"> En savoir plus !</a></p>
       <h3>Tarifs</h3>
       <p>
@@ -47,11 +57,9 @@
 	Hérouville-Saint-Clair</p>
     </aside>
     
-    
-    
-    
     <iframe scrolling="no" frameborder="0" allowTransparency="true" src="http://www.deezer.com/plugins/player?autoplay=false&playlist=false&width=700&height=80&cover=true&type=playlist&id=922762005&title=&app_id=undefined" width="700" height="80"></iframe>
     <br>
+    
     <div id="buttons">
       <div class="button1">
 	<a href="#prima">Edition 2014</a>
@@ -69,7 +77,7 @@
     
     <div id="content">
       <section id="intro" class="event">
-	<h3> Introduction </h3>
+	<h3>Présentation</h3>
 	<p>
 	  La première édition du Festival Beauregard a eu lieu en 2009 sous l'impulsion de Paul Langeois, qui gère la salle
 	  de musique actuelle hérouvillaise du Big Band Café et de Patrick Simon gérant de l'agence de communication Kafé 
@@ -93,7 +101,6 @@
 	</p>
 	  <img src="../images/beauregard-2009.jpg" alt="beauregard-2009">
       </section>
-      
       
       <div class="clearer"></div>
       <section id="prima" class="event">
@@ -173,6 +180,8 @@
 	</p>	
 	<img  src="../images/beauregard-2010.jpg" alt="beauregard-2010">
       </section>
+    </div>
+    
     </div>
     <div class="clearer"></div>
     <footer>  <!-- pied de page-->

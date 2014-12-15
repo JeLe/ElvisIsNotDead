@@ -26,14 +26,14 @@
         <a href="accueil.html" title="home"><img src="../images/casque-viking.jpg" alt="retour accueil">Normandie - Une terre de culture</a>
       </div>
     </header>
-    <aside id="infos">
+<aside id="infos">
       <h2>Festival du cinéma américain</h2>
       <img src="../images/deauville-logo.jpg" alt="logo deauville">
       <h3>Dates</h3>
       <p>Du 4 au 13 Septembre 2015</p>
       <h3>Billeterie</h3>
       <p>Site du festival</p>
-      <p><a href="http://www.badgecid.com/saisie-presta.php?id=16"> Participez !</a></p>
+      <p><a href="http://www.festival-deauville.com/DEV/index.php?pid=24"> Participez !</a></p>
       <h3>Tarifs</h3>
       <p>
 	Pass Festival : 160€<br><br>
@@ -65,8 +65,8 @@
 	<h3>Grand Prix</h3>
 	<p>
 	  Le Grand prix est la récompense suprême décernée depuis 1995 à un film au cours du Festival du cinéma américain de Deauville.
-	  
-	  Ce prix s'est appelé Grand prix spécial Deauville de 1995 à 1997 et Grand prix du cinéma indépendant américain en 1998 et 1999.
+
+Ce prix s'est appelé Grand prix spécial Deauville de 1995 à 1997 et Grand prix du cinéma indépendant américain en 1998 et 1999.
 	  <br>
 	  Palmarès
 	  <br>
@@ -123,7 +123,7 @@
 	  2013 : (ex-æquo) All Is Lost de J. C. Chandor et Stand Clear of the Closing Doors de Sam Fleischner<br>
 	  2014 : The Good Lie de Philippe Falardeau<br>
 	  Le Prix du jury est une récompense décernée depuis 1995 à un film au cours du Festival du cinéma américain de Deauville.
-	  
+	 
 	</p>
 	<img src="../images/deauville-prix2.png" alt="prix2">
       </section>
@@ -167,29 +167,15 @@
 	  2013 : The Retrieval de Chris Eska<br>
 	  2014 : It Follows de David Robert Mitchell<br>
 	</p>
-	<img src="../images/deauville-prix3.jpg" alt="prix3">
+	<img src="../images/jazz-special.jpg" alt="jazz special">
       </section>
       <div class="clearer"></div>
       <section id="ultima" class="event">
 	<h3>Prix de la révélation Cartier</h3>	
 	<p>
-	  Le Prix de la Révélation Cartier est une récompense de
-	  cinéma décernée depuis 2006 à un film au cours du Festival
-	  du cinéma américain de Deauville.
-	  <br>
-	  Palmarès
-	  <br>
-	  2006 : Half Nelson de Ryan Fleck<br>
-	  2007 : Rocket Science de Jeffrey Blitz<br>
-	  2008 : Ballast de Lance Hammer<br>
-	  2009 : The Messenger de Oren Moverman<br>
-	  2010 : Jewish Connection de Kevin Asch<br>
-	  2011 : Detachment de Tony Kaye<br>
-	  2012 : Les Bêtes du sud sauvage (Beasts of the Southern Wild) de Benh Zeitlin<br>
-	  2013 : Fruitvale Station de Ryan Coogler<br>
-	  2014 : A Girl Walks Home Alone At Night d'Ana Lily Amirpour<br>
-	</p>
-	<img  src="../images/deauville-prix4.jpg" alt="prix4">
+	   Le Prix de la Révélation Cartier est une récompense de cinéma décernée depuis 2006 à un film au cours du Festival du cinéma américain de Deauville.
+	</p>	
+	<img  src="../images/jazz-acces.jpg" alt="acces jazz">
       </section>
     </div>
     <div class="clearer"></div>
@@ -199,6 +185,6 @@
       <a href="http://www.unicaen.fr/">Université de Caen Basse-Normandie </a>
       <div class="clearer"></div>
     </footer>
-    
+        
   </body>
 </html>
