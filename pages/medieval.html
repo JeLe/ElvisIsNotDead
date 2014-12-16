@@ -1,58 +1,141 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8"/>
-        <link rel="stylesheet" href="../style/commun.css"/>   <!-- feuille de style à déclarer -->
-        <link rel="stylesheet" href="../style/accueil.css"/>   <!-- feuille de style à déclarer -->
-        <!--attention, j'ai ecrit culutre..-->
-        <!-- ne pas oublier les métadonnées-->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-
-        <script src="../js/commun.js"></script>
-
-        <title>Normandie et Culutre</title>
-    </head>
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="../style/commun-event.css" media="all">
     
-    <body>
-        <header>
-            <div id="homeTitle">
-                <a href="accueil.html" title="home"><img src="../images/casque-viking.jpg" alt="retour accueil">Normandie - Une terre de culture</a>
-            </div>
-        </header>
-        <!------------------------------>
-        <h1>Festival Médiéval de Bayeux</h1>
-        <section>
-			<p>Chaque année, Bayeux toute entière offre son patrimoine préservé comme décor aux  fêtes médiévales !  En 2014, année du 70e
-			anniversaire du Débarquement, le thème "D'une conquête à l'autre" a été choisi : du débarquement des vikings en Normandie à 
-			celui des alliés en 1944, sans oublier celui de Guillaume en Angleterre en 1066, les 5 & 6 juillet prochains à Bayeux, les visiteurs
-			sont conviés à un voyage dans le temps...
-			Les vikings seront notamment à l'honneur avec des reconstitutions de campements, de combats, des ateliers autour des techniques de 
-			navigation et de fabrication des fameux Drakkars. Deux répliques seront d'ailleurs exposées place de Gaulle et dans la cour de l'Hôtel du Doyen !
-			Toujours très attendu, le marché médiéval s'installera tout autour de la cathédrale. Près de 150 artisans venus de France et d'Europe
-			exposeront leurs produits artisanaux : bijoux, poupées, épices, sculpture, poterie... Les tailleurs de pierre investiront également
-			le chantier médiéval, les tavernes seront nombreuses et les spectacles de rue variés !
-			
-Damoiselles et damoiseaux, venez festoyer à Bayeux pendant trois jours aux couleurs médiévales ! La cité bajocasse met en avant son caractère délicieusement
- préservé offrant un décor de choix pour célébrer l'anniversaire de la création du Duché de Normandie.   A cette occasion, l'ambiance tant appréciée des Fêtes
- médiévales de Bayeux prendra une dimension toute particulière. Exceptionnellement, l'événement s'ouvrira dès le vendredi soir autour d'une grande parade médiévale
- nocturne.   Pas moins d'une vingtaine de compagnies de reconstitution historique venues de France et d'Europe installeront leur campement et nous feront revivre
- le quotidien des Vikings, des Saxons et des Normands (costumes, mets, instruments de musique, artisanat, jeux, combats…), une véritable plongée dans l'histoire ! 
- Pour célébrer la Normandie, les métiers d'art seront également à l'honneur avec des démonstrations en public (tailleurs de pierre, forgerons, sculpteurs...).
- Prenez le temps de flâner au milieu des échoppes et des écrivains du salon du livre qui complèteront cette programmation riche et festive, où une région tout
- entière retrouve son histoire et ses origines, même des horizons les plus lointains. - See more
- at: http://www.medielys.com/fetes-medievales/fetes-medievales-de-bayeux-un-patrimoine-vivant-fete-la-normandie-1115.htm#sthash.ltuM6onm.dpuf
-			</p>
-			</section>
-			<img src="../images/medieval.jpg" alt="photo-medieval">
-        
-        <div class="clearer"></div>
-<div class="clearer"></div>
+    <link rel="stylesheet" href="../style/commun.css" media="all">
+    
+    <link rel="stylesheet" href="../style/commun-small.css" media="(max-width: 960px)">
+    
+    <link rel="stylesheet" href="../style/commun-big.css" media="(min-width: 960px)">
+    
+    
+    <script src="../js/beauregard.js"></script>
+    
+    <script src="../js/jquery.js"></script>
+    
+    <script src="../js/commun.js"></script>
+    
+    <title>Normandie et Culutre</title>
+  </head>
+  
+  <body>
+    <header>
+      <div id="homeTitle">
+        <a href="accueil.html" title="home"><img src="../images/casque-viking.jpg" alt="retour accueil">Normandie - Une terre de culture</a>
+      </div>
+    </header>
+
+    <div id="alles">
+      <aside id="infos">
+	<h2>Fêtes médiévales de Bayeux</h2>
+	<img src="../images/medieval-logo.jpg" alt="logo medieval">
+	<h3>Dates</h3>
+	<p>5 et 6 Juillet 2014</p>
+	<h3>Billeterie</h3>
+	<p>Pas de billeterie, plus d'infos sur le site de la ville de Bayeux : </p>
+	<p><a href="http://www.mairie-bayeux.fr/index.php?id=fetesmedievales"> Fêtes médiévales </a></p>
+	<h3>Tarifs</h3>
+	<p>
+	  Entrée Libre !
+	</p>
+	<h3>Lieu</h3>
+	<p>Bayeux</p>
+      </aside>
+      <img src="../images/medieval-banner.jpg" alt="banniere medieval" id="banner">
+      <br>
+      <div id="buttons">
+	<div class="button1">
+	  <a href="#prima">Résumé</a>
+	</div>
+	<div class="button1">
+	  <a href="#antepenultima">Edition 2011</a>
+	</div>
+	<div class="button1">
+	  <a href="#penultima">Edition 2012</a>
+	</div>
+	<div class="button1">
+	  <a href="#ultima">Edition 2011</a>
+	</div>
+      </div>
+      
+      <div id="content">
+	
+	<section id="prima" class="event">
+	  <h3>Présentation</h3>
+	  <p>
+	    La cité médiévale invite à festoyer !
+	    Samedi 5 et dimanche 6 juillet 2014
+	    Gentes Dames, Gentilshommes et damoiseaux, venez festoyer à Bayeux le temps d’un week-end aux couleurs médiévales !
+	    La cité bajocasse toute entière offre son caractère délicieusement préservé comme décor !
+	    
+	    « D’une conquête à l’autre » sera le fil conducteur de cette 28e édition, parce que l’Histoire est faite d’ambitions, de successions, d’invasions, de migrations… Vous pourrez ainsi rencontrer des vikings avec leurs drakkars, véritables rois des mers, et leurs descendants les normands, qui au temps du Duc Guillaume réunirent la plus grande armada navale du Moyen Age.
+	    Au son des vièles et autres mandoles, saltimbanques, bateleurs et trouvères donneront le ton de ces fêtes sur les placettes ou sur les planches et tréteaux des « théâtres » à ciel ouvert : saynètes, concerts…
+	    Pour remonter le cours du temps, les reconstitutions de campements feront évidemment la part belle aux IXe, Xe et XIe siècles. Retrouvez la vie quotidienne des paysans et des bourgeois mais aussi de ceux qui vivaient par l’épée (chantier naval, chantier cathédrale, artisanat en tout genre, démonstrations de combat…).
+	    Prenez le temps de flâner parmi les écrivains du Salon du livre médiéval ou des échoppes du marché de producteurs et d’artisans – plus d’une centaine ! – qui compléteront cette programmation riche et festive.
+	  </p>
+	  <img src="../images/medieval-resume.jpg" alt=" resume medieval">
+	</section>
+	<div class="clearer"></div>
+	<section id="antepenultima" class="event">	
+	  
+	  <h3>Edition 2013</h3>
+	  <p>
+	    Dans la cour de l'Hôtel du Doyen, cage à écureuil, échafaudage et animations vous attendent pour une découverte de l'architecture et des techniques d'autrefois. Et pour la première fois cette année, une grande exposition sera présentée au premier étage du bâtiment, mettant à l'honneur les bâtisseurs médiévaux et leurs différents savoir-faire, au travers de maquettes, illustrations et outils d'époque. Côté jardin, les enfants trouveront des animations spécialement faites pour eux ! Jeux d'époque en bois, ateliers de peinture, spectacle d'ombres...
+	    
+	    La majestueuse Cathédrale, vidée de ses chaises comme à l'époque médiévale, accueillera la Messe des gueux le dimanche à 9h30. Pour les enfants, un atelier fresque y sera pour la première fois installé. Aux abords de l'édifice religieux, le marché médiéval et les spectacles de rues réuniront artistes et artisans venus de Normandie, de France ou même d'Allemagne, de Belgique ou d'Angleterre.
+	    
+	    Une compagnie du XVe siècle installera sa forteresse et son campement Place de Gaulle : combats, manoeuvres militaires et techniques de siège rythmeront la journée. A voir également : campement civil, spectacle de fauconnerie et atelier de calligraphie.
+	    
+	    Enfin, ne ratez pas le 15e Salon du Livre Médiéval, avec sa programmation variée et des histoires pour tous les âges, et la parade en costumes le dimanche matin à 11h.
+	    
+	    Pendants deux jours, vivez au rythme médiéval !
+	  </p>
+	  <img src="../images/medieval-2013.jpg" alt="edition 2013">
+	</section>
+	
+	<div class="clearer"></div>
+	<section id="penultima" class="event">
+	  <h3>Edition 2012</h3>	
+	  <p>
+	    Les 7 et 8 juillet 2012, les Fêtes Médiévales de Bayeux sont de retour, pour un week-end hors du temps en compagnie de chevaliers, créatures fantastiques, personnages celtes et féeriques…
+	    
+	    Cette nouvelle édition des Fêtes Médiévales de Bayeux mettra à l’honneur les enfants et le thème de l’enfance, avec des parcours initiatique du petit chevalier, des sports du moyen âge, des jeux anciens…
+	    
+	    Les Fêtes Médiévales de Bayeux seront animées de spectacles de rue, de démonstrations en public, de batailles, d’ateliers… Après ce week-end les métiers de tailleurs de pierre, forgerons, sculpteurs… n’auront plus de secrets pour vous, ainsi que la vie des villages d’autrefois et celle d’un campement avec ses tâches quotidiennes (entretien des armes de l’époque, combats…).
+	    
+	    Comme chaque année, vous retrouverez parmi les animations des Fêtes Médiévales de Bayeux, un salon du livre normand et un marché médiéval où une centaine d’artisans et producteurs seront présents.
+	    
+	    A ne pas manquer, le dimanche 8 juillet à 11 heure la parade en costume où plus d’un millier de participants et de compagnies professionnelles sont attendus !
+	</p>
+	  <img src="../images/medieval-2012.jpg" alt="edition 2012">
+	</section>
+	<div class="clearer"></div>
+	<section id="ultima" class="event">
+	  <h3>Edition 2011</h3>	
+	  <p>
+	    25 ans déjà que Bayeux se met à l'heure médiévale chaque 1er week-end de juillet !
+	    
+	    Pendant 3 jours, la cité bajocasse mettra en avant son patrimoine médiéval préservé, un décor authentique pour célébrer les 1100 ans de la création du Duché de Normandie. 
+	    
+	    Pour cette 25ème édition, l’ambiance tant appréciée des Fêtes Médiévales de Bayeux prendra une dimension toute particulière. Exceptionnellement, l’évènement s’ouvrira dès le vendredi soir autour d’une grande parade médiévale nocturne. 
+	    
+	    Pas moins d’une vingtaine de compagnies de reconstitution historique venues de France et d’Europe installeront leur campement et feront renaître le quotidien des Vikings, des Saxons et des Normands (costumes, mets, instruments de musique, artisanat, jeux, combats…), une véritable plongée dans l’histoire !
+	    
+	  </p>
+	  <img  src="../images/medieval-2011.jpeg" alt="edition 2011">
+	</section>
+      </div>
+      
+    </div>
+    <div class="clearer"></div>
     <footer>  <!-- pied de page-->
       <a href="mailto:dev.lecarpentier@hgmailcom">Jérémie Lecarpentier</a>
       <a href="mailto:antoinepincon1@gmail.com">Antoine Pinçon</a>
       <a href="http://www.unicaen.fr/">Université de Caen Basse-Normandie </a>
       <div class="clearer"></div>
     </footer>
-        
-    </body>
+    
+  </body>
 </html>
