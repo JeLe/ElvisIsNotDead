@@ -1,5 +1,5 @@
     header {
-        background-color : #2db34a;
+        background-color : #aaa;
     width :100%;
     }
     
@@ -18,14 +18,14 @@
     
     /*deuxieme niveau*/
     nav > ul > li > ul {
-        background-color : #55cc55;
+        background-color : #acacac;
 	
     }
     
     
     #asideNav {
 
-        background-color : #33aa33;
+        background-color : #757575;
     overflow : scroll;
     }
     

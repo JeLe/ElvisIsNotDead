@@ -146,6 +146,8 @@ figure
 figure
 
 \section{Qu'avons nous voulu faire ?}
+Je propose de ne pas faire cette section mais de passer directement à la suivante, que j'ai modifié pour que ce soit possible : en gros, au lieu de dire ce qu'on a voulu faire, on dit direct ce qu'on a fait et comment, et par themes...
+
 \subsection{Première version en HTML/CSS}
 \begin{itemize}
 \item premiers schémas
@@ -164,6 +166,8 @@ figure
 
 
 \section{Solutions techniques pour réaliser le site}
+
+Du coup la liste suivante ne sert pas du tout...
 \begin{itemize}
 \item menus déroulants
 \item slider
@@ -173,6 +177,332 @@ figure
 \item erreurs rencontrées, solutions apportées. 
 
 \end{itemize}
+
+
+\subsection{Mise en page}
+\subsubsection{Responsive design}
+Nous avons souhaité que notre mise en page puisse s'adapter à la taille d'écran. Celle-ci peut varier grandement selon que le site soit visité sur un ordinateur de bureau, une tablette ou un ordiphone. Nous avons donc décidé que la mise en page en elle-même devait changer selon la taille d'écran, et pas simplement les proportions des différents éléments. Pour atteindre ce but, nous avons utilisé les \code{@media} queries. Celles-ci permettent de spécifier pour quelles types de medias, ou tailles d'écran, ou orientations doit s'appliquer le style :
+\begin{itemize}
+\item contenu dans la feuille de style liée au HTML dans la balise \code{<link>}, si l'attribut media est donné dans cette balise ;
+\item contenu entre accolades si le \code{@media} query est dans la feuille de style.
+\end{itemize}
+Ces deux utilisations possibles sont illustrées dans les Listings \ref{mediaQueries} et \ref{mediaQueries2}.
+
+\begin{lstlisting}[ label={mediaQueries}, caption={Illustration des \code{@media} queries dans le HTML}]
+<!--feuille de style commune a tous medias-->
+<link rel="stylesheet" href="../style/commun.css" media="all">
+
+<!--feuille de style pour les ecrans de largeur inferieure a 960px-->
+<link rel="stylesheet" href="../style/commun-small.css" 
+        media="(max-width: 960px)">
+
+<!--feuille de style pour les ecrans de largeur superieure a 960px-->
+<link rel="stylesheet" href="../style/commun-big.css" 
+        media="(min-width: 960px)">
+
+\end{lstlisting}
+
+\begin{lstlisting}[ label={mediaQueries2}, caption={Illustration des \code{@media} queries dans le CSS}]
+@media(orientation: portrait){
+	/*toutes les proprietes enoncees ici*/
+	/*seront appliquees si la largeur du media est*/
+	/*inferieure a sa longueur*/
+}
+\end{lstlisting}
+
+
+\subsubsection{Grande Version}
+Du coup ca tu peux t'en occuper, c'est juste le css normal sauf le style du header, ca on en parle dans la sous-section suivante
+\subsubsection{Version Mobile}
+Et ca aussi, c'est juste les trucs "-small"...
+Et dans ces deux sous-sous-sections tu peux aussi parler du peu de javascript qu'on a utilisé pour les hauteurs..
+
+\subsection{Menu de navigation}
+\subsubsection{Génération Automatique}
+Nous avons voulu faire en sorte que notre menu de navigation, placé dans une balise \code{<nav>} soit généré automatiquement par un script. Cela a pour avantages de faciliter la maintenance de celui-ci et l'homogénéité du site. Il n'est ainsi plus nécessaire de modifier toutes les pages HTML si on souhaite ajouter un élément à ce menu par exemple. 
+
+
+Ce menu de navigation se présente pour la version Desktop de notre site sous la forme d'un menu déroulant. Nous avons choisi de le structurer sous la forme d'une liste non ordonnée. À chaque niveau correspond une liste. Ainsi, le premier niveau est la liste principale, le second niveau est une liste dans un élément de la premiere liste. Il n'y a que deux niveaux de listes par souci de clarté dans la navigation.
+
+Nous avons donc structuré notre Array de la façon suivante : 
+\begin{itemize}
+\item chaque élément est une sou-liste correspondant à un élément de la liste principale (premier niveau) ; 
+\item chaque sous-liste contient un String correspondant au texte affiché pour le premier niveau et autant de sous-sous-listes qu'il y a d'éléments dans le deuxième niveau ; 
+\item chaque sous-sous-liste contient deux Strings, correspondant à la cible et au texte du lien qui sera un \code{<li>} de la liste de deuxième niveau.
+\end{itemize}
+Le Listing \ref{Array} détaille le Array que nous avons utilisé dans notre script.
+
+
+\begin{lstlisting}[ label={Array}, caption={Array utilisé dans notre Script}]
+
+var navMenu = [["Musique", ["beauregard.html", "Beauregard"], 
+    ["jazz.html", "Jazz sous les Pommiers"]], 
+    ["Cinema", ["deauville.html", "Festival de deauville"]], 
+    ["Tradition", ["medieval.html", "Festival medieval de Bayeux"], 
+    ["cidre.html", "Cidre et Dragons"]]];
+
+
+\end{lstlisting}
+
+
+Nous avons pu générer la structure de notre menu en utilisant les méthodes de création d'éléments HTML et d'insertion de ceux-ci dans le DOM associées à l'objet Document. La Table \ref{DOM methods} liste les méthodes que nous avons utilisé.
+
+\begin{table}[htbp]
+\renewcommand{\arraystretch}{1.5}
+\caption{Méthodes de manipulation du DOM}
+\label{DOM methods} 
+\centering
+\begin{tabular}{|c|p{7cm}|}
+\hline
+\textbf{Méthode} & \textbf{Description}\\
+\hline
+document.createElement("\textit{nom de balise}") & Crée et retourne un élément HTML du type spécifié.\\
+\hline
+\textit{élément1}.appendChild(\textit{élément2}) & Ajoute \textit{élément2} à \textit{élément1} en tant que dernier fils.\\
+\hline
+\textit{élément}.setAttribute("\textit{attribut}", "\textit{valeur}") & Ajoute un \textit{attribut} à un \textit{élément}.\\
+\hline
+\textit{élément1}.insertBefore(\textit{élément2}, \textit{élément3}) & Ajoute \textit{élément2} aux fils de \textit{élément1} avant \textit{élément3}.\\
+\hline
+
+\end{tabular}
+\end{table}
+
+L'utilisation des ces méthodes et l'exploitation des données du menu contenues dans un Array, qui se fait au moyen de boucles, sont détaillés dans le listing \ref{headerFunc}, qui correspond à la fonction générant notre menu dans notre script. Les commentaires explicitent le code.
+
+
+\begin{lstlisting}[ label={headerFunc}, caption={Exploitation des données d'un Array}]
+
+function header(){
+    //cette fonction construit le menu dans son ensemble
+    
+    //la balise nav contiendra le menu dans son ensemble
+    // et elle doit etre stockee  dans une variable globale
+    dropDown = document.createElement("nav"); 
+    
+    //on cree la liste principale
+    var firstUl = document.createElement("ul");
+    dropDown.appendChild(firstUl);
+    
+    //le style du menu utilise des elements flottants, il faut donc une div class=clearer
+    var clearer = document.createElement("div");
+    clearer.setAttribute("class", "clearer");
+    dropDown.appendChild(clearer);
+    
+    //cette boucle parse le Array
+    //cree un li pour chaque element
+    // et un ul dans chaque li
+    for (var element in navMenu){
+        var li = document.createElement("li");
+        var ul = document.createElement("ul");
+        li.appendChild(ul); 
+        firstUl.appendChild(li);
+    }
+    
+    //a ce stade la structure de la liste est faite
+    // il suffit de la remplir
+    
+    for (var i=0; i<navMenu.length; i++){ 
+
+        //le premier niveau
+        var firstLi = firstUl.childNodes[i];
+        var anchor = document.createElement("a");
+        anchor.href = "#";
+        anchor.appendChild(document.createTextNode(navMenu[i][0]));
+        firstLi.insertBefore(anchor, firstLi.firstChild);
+        
+        //et le second
+        var secondLevel = firstLi.lastChild;
+        for (var j=1; j<navMenu[i].length; j++){
+            var a = document.createElement("a");
+            a.href = navMenu[i][j][0];
+            a.appendChild(document.createTextNode(navMenu[i][j][1]));
+            child = document.createElement("li");
+            child.appendChild(a);
+            secondLevel.appendChild(child);
+        }
+    }
+    
+    // et pour finir on place la structure cree dans le header
+    document.getElementsByTagName("header")[0].appendChild(dropDown);
+    
+}
+\end{lstlisting}
+
+
+\subsubsection{Placement Automatique}
+
+Pour des raisons de cohérence structurelle, lors du passage de la version desktop à la version mobile, il est important que le menu de navigation change de place dans le DOM. En effet, dans la version desktop, ce menu fait partie du header, alors que dans la version mobile, il est sur le coté de la page. Il devrait donc logiquement être placé dans une balise \code{<aside>}. De plus, il doit revenir dans le \code{<header>} lors d'un passage de la version mobile à la version desktop. Ces changements sont aussi pris en charge par notre script dans deux fonctions, détaillées dans le Listing \ref{nav mouvement}.
+
+
+\begin{lstlisting}[label={nav movement}, caption={Fonctions Assurant le Mouvement du Menu de Navigation}]
+//placer le nav dans un aside
+function moveNavToAside(){
+    
+    //creation d'un aside avec le id asideNav dans lequel on placera le menu
+    var aside = document.createElement("aside");
+    aside.setAttribute("id", "asideNav");
+    
+    // la methode removeChild retourne l'element ;
+    // c'est un peu comme un couper (le coller se fait plus tard)
+    var nav = document.getElementsByTagName("header")[0].removeChild(document.getElementsByTagName("header")[0].lastChild);
+    
+    //l'element id=beforeFooter est une div class=clearer, car le menu sera flottant.
+    document.body.insertBefore(aside, document.getElementById("beforeFooter"));
+    document.getElementById("asideNav").appendChild(nav);
+   
+}
+
+function moveNavToHeader(){
+    
+    // cette fonction fait en gros l'inverse de la precedente
+    var nav = document.getElementById("asideNav").removeChild(document.getElementById("asideNav").lastChild);
+    document.getElementsByTagName("header")[0].appendChild(nav);
+    document.body.removeChild(document.getElementById("asideNav"));
+    document.getElementsByTagName("header")[0].style.width = "100%";
+
+}
+
+\end{lstlisting}
+
+
+\subsubsection{Style Associé}
+
+c'est ici que tu peux reprendre le CR TP 11 je penses, a moins que tu aies déjà parlé du style du menu déroulant avant, mais je pense que ce serait bien de le faire ici, et en meme temps ici tu peux parler des styles pour les deux versions (grande et mobile..) Et si tu peux corriger le mot en italique dans le paragraphe après celui ci ce serait miraculeux, parce que moi je le connais pas en français..
+
+
+\subsection{"Image Slider"}
+Un des \textit{features} de notre page d'accueil est d'avoir des images défilantes, sur lesquelles on peut cliquer pour accéder à une présentation des themes dont traite  notre site (Musique, Cinéma et Tradition). Ce défilement d'images est un effet assez difficile à mettre en oeuvre sans utiliser de plugin javascript. Nous avons au cours du développement de notre site testé plusieurs façons de mettre cet effet en place.
+\subsubsection{Premiere Version : Animations CSS}
+Le CSS permet de faire des transitions et des animations portant sur une ou plusieurs propriétés particulières. L'avantage de ce procédé est qu'il ne requiert pas de javascript, l'inconvéniant est que c'est tout pourri... ;)
+
+\begin{lstlisting}
+/*appel aux animations*/
+
+#first {
+    -webkit-animation: cycle 18s linear infinite;
+    -moz-animation: cycle 18s linear infinite;
+    animation: cycle 18s linear infinite;
+}
+
+#second {
+    -webkit-animation: cycletwo 18s linear infinite;
+    -moz-animation: cycletwo 18s linear infinite;
+    animation: cycletwo 18s linear infinite;
+}
+
+#third {
+    -webkit-animation: cyclethree 18s linear infinite;
+    -moz-animation: cyclethree 18s linear infinite;
+    animation: cyclethree 18s linear infinite;
+}
+
+
+
+/* ANIMATION */
+/*et oui, en trois fois pour que ca marche avec plein de navigateurs !!*/
+/*meme si le validator css n'est pas content, c'est comme ca qu'il faut le faire...*/
+/*http://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp*/
+
+
+@-webkit-keyframes cycle {
+    0%  {opacity: 1; }
+    22.2% {opacity: 1;}
+    27.8% {opacity: 0;}
+    28% {opacity: 0;}
+    82% {opacity: 0;}
+    90%{opacity: 1;}
+    
+}
+
+
+@-webkit-keyframes cycletwo {
+    0%  {opacity: 0; }
+    22.3% {opacity: 0;}
+    27.8% {opacity: 1;}
+    50% {opacity: 1;}
+    55.5% { opacity: 0;}
+    
+}
+
+@-webkit-keyframes cyclethree {
+    0%  {opacity: 0; }
+    55.5% {opacity: 0;}
+    61% { opacity: 1;}
+    80% { opacity: 1;}
+    100% {opacity: 0;}
+    
+}
+
+
+
+@-moz-keyframes cycle {
+    0%  {opacity: 1; }
+    22.2% {opacity: 1;}
+    27.8% {opacity: 0;}
+    28% {opacity: 0;}
+    82% {opacity: 0;}
+    100%{opacity: 1;}
+    
+}
+
+
+@-moz-keyframes cycletwo {
+    0%  {opacity: 0; }
+    22.3% {opacity: 0;}
+    27.8% {opacity: 1;}
+    50% {opacity: 1;}
+    55.5% { opacity: 0;}
+    
+}
+
+@-moz-keyframes cyclethree {
+    0%  {opacity: 0; }
+    55.5% {opacity: 0;}
+    61% { opacity: 1;}
+    80% { opacity: 1;}
+    100% {opacity: 0;}
+    
+}
+
+
+
+@keyframes cycle {
+0%  {opacity: 1; }
+   22.2% {opacity: 1;}
+   27.8% {opacity: 0;}
+   28% {opacity: 0;}
+   82% {opacity: 0;}
+   100%{opacity: 1;}
+
+
+}
+
+
+@keyframes cycletwo {
+    0%  {opacity: 0; }
+   22.3% {opacity: 0;}
+   27.8% {opacity: 1;}
+   50% {opacity: 1;}
+   55.5% { opacity: 0;}
+
+}
+
+@keyframes cyclethree {
+    0%  {opacity: 0; }
+   55.5% {opacity: 0;}
+   61% { opacity: 1;}
+   83% { opacity: 1;}
+   90% {opacity: 0;}
+
+}
+\end{lstlisting}
+
+
+\subsubsection{Deuxième Version : Objet Javascript}
+
+
+
 
 \end{document}
 
